@@ -33,9 +33,12 @@
   {% endfor %}
 </ul>
 <hr>
-<div class="auto-toc">
+<div class="page-content">
 {{ page.content | safe }}
 </div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/{{ page.relative_path }}" class="button">Contribute to this post</a>
+<hr>
 <script src="https://utteranc.es/client.js"
         repo="erayaydin/zola-personal-blog"
         issue-term="pathname"

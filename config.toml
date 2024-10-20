@@ -29,5 +29,6 @@ nav = [
   { url = "/", name = "/home" },
   { url = "/about/", name = "/about" },
   { url = "/journal/", name = "/journal" },
-  { url = "/blog/", name = "/blog" }
+  { url = "/blog/", name = "/blog" },
+  { url = "https://github.com/erayaydin/erayaydin.github.io", name = "/download" },
 ]
