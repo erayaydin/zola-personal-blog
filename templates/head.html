@@ -9,6 +9,7 @@
 <meta name="author" content="{% if page.extra.author %}{{ page.extra.author }}{% elif config.extra.author %}{{ config.extra.author }}{% endif %}">
 <meta name="description" content="{{ head_macros::get_description() | trim }}">
 <link rel="canonical" href="{{ head_macros::get_url() | trim | safe }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path="favicon.png", trailing_slash=false) }}">
 {{ head_macros::og() }}
 {% endblock metatags %}
 {% if config.generate_feeds %}
