@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Windows&amp;#x27;a Apache, Mysql, PHP ve PHPMyAdmin Kurulumu</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Windows&amp;#x27;a Apache, Mysql, PHP ve PHPMyAdmin Kurulumu">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">windows-apache-mysql-php-phpmyadmin-kurulumu</span>
+</div>
+<time datetime="2015-05-29T16:30:00">Published on: <span class="accent-data">2015-05-29T16:30:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Windows&#x27;a Apache, Mysql, PHP ve PHPMyAdmin Kurulumu</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/#apache-kurulumu">Apache Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/#php-kurulumu">PHP Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/#apache-php-entegresi">Apache - PHP Entegresi</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/#apache-nin-servis-olarak-eklenmesi">Apache’nin Servis Olarak Eklenmesi</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/#php-test">PHP Test</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/#mysql-kurulumu">MySQL Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/windows-apache-mysql-php-phpmyadmin-kurulumu/#phpmyadmin-kurulumu">PHPMyAdmin Kurulumu</a>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<p>Apache, Mysql ve PHP’yi manuel olarak kurmak için bu makaleyi inceleyebilirsiniz.</p>
+<blockquote>
+<p>Windows 8.1 üzerinde test edilmiştir.</p>
+</blockquote>
+<h2 id="apache-kurulumu"><a class="no-style" href="#apache-kurulumu" aria-label="Anchor link for: apache-kurulumu">##</a>
+Apache Kurulumu</h2>
+<p>Apache kurulumu için, Windows XP ve 2003 kullanıcıları <a rel="noopener" target="_blank" href="http://www.microsoft.com/download/en/details.aspx?id=13523">VC10_x64</a>/<a rel="noopener" target="_blank" href="http://www.microsoft.com/download/en/details.aspx?id=8328">VC10_x86</a>  kurmalı, diğer versiyonlar için <a rel="noopener" target="_blank" href="http://www.microsoft.com/en-us/download/details.aspx?id=30679">VC11</a> kurulmalıdır.</p>
+<p>Apache kurulumu için <a rel="noopener" target="_blank" href="http://www.apachelounge.com/">Apache Lounge</a> sitesini kullanacağız.</p>
+<p>Visual C++ Redistributable for Visual Studio 2012 kurulumunu yaptıysanız  <a rel="noopener" target="_blank" href="http://www.apachelounge.com/download/">Download</a> kısmından bize uygun olan versiyon ve sistemi indirin.</p>
+<p>x64 bir sistem kullandığım için <code>httpd-2.4.12-win64-VC11.zip</code> dosyasını indireceğim.</p>
+<p>İndirdiğimiz <strong>zip</strong> dosyasını <code>C:/Localhost/Apache</code> klasörüne çıkartın.</p>
+<p>Artık tek yapmamız gereken ayar dosyasını düzenlemek. Bunun için <code>C:/Localhost/Apache/conf/httpd.conf</code> dosyasını editör ile açıyoruz.</p>
+<p><strong>ServerRoot</strong> parametresine <strong>c:/Localhost/Apache</strong> değerini veriyoruz. Port olarak <strong>80</strong> kullanacağımız için <strong>Listen</strong> parametresini değiştirmemize gerek yok. Eğer başka bir porttan kullanmak istiyorsanız bu parametreyi değiştirebilirsiniz.</p>
+<p><strong>LoadModule</strong> listesinde yer alan <code>LoadModule rewrite_module modules/mod_rewrite.so</code> satırının başındaki <code>#</code> yorum satırını kaldırıyoruz. Bu sayede .htaccess ile apache’ye yeniden yazım işlemi tanımlayabileceğiz.</p>
+<p><strong>DocumentRoot</strong> parametresine de sunucu dosyalarımızı tutacağımız dizini tanımlayacağız. Çalışma amaçlı ben <code>C:/Webserver</code> dizinini kullanacağım. Aynı şekilde <strong>&lt;Directory “”&gt;</strong> parametresini de düzenliyoruz.</p>
+<p>Dosyayı kaydedip, konfigürasyon dosyamızı test etmek için <code>C:/Localhost/Apache/bin/httpd.exe</code> dosyasını <strong>cmd.exe</strong> ile açıyoruz. Eğer herhangi bir hata alıp <strong>httpd.exe</strong> kapatılmamışsa sorunumuz yok demektir. Ctrl+C ile httpd.exe’yi sonlandırabilirsiniz.</p>
+<h2 id="php-kurulumu"><a class="no-style" href="#php-kurulumu" aria-label="Anchor link for: php-kurulumu">##</a>
+PHP Kurulumu</h2>
+<p>PHP kurulumu için de <a rel="noopener" target="_blank" href="http://windows.php.net">PHP Windows</a> sitesini kullanacağız. <a rel="noopener" target="_blank" href="http://windows.php.net/download/">Download</a> kısmından VC ve sistemimize uygun PHP’yi indiriyoruz. VC11 ve x64 kullandığım için <strong>VC11 x64 Thread Safe</strong> seçtim. Apache modulü olarak kurulum yapacağımız için <strong>Thread Safe</strong> olanları indirmeniz gerekiyor.</p>
+<p>İndirdiğiniz php <strong>zip</strong> dosyasını <code>C:/PHP/</code> içerisine çıkartıyoruz. Ayarlamaları yapmak için de <code>php.ini-development</code> dosyasını <code>php.ini</code> olarak değiştirip açıyoruz.</p>
+<p><strong>max_execution_time</strong> parametresini isteğinize göre arttırın. PHP dosyalarınızın maksimum çalıştırma süresini bu sayede arttırabilirsiniz. Ben 30’dan 60 saniyeye arttırdım.</p>
+<p><strong>memory_limit</strong> parametresini de sahip olduğunuz RAM’e göre arttırabilirsiniz. Varsayılan olarak <strong>128MB</strong> seçilidir. <strong>512</strong>’nin ideal olacağını düşünüyorum.</p>
+<p><strong>post_max_size</strong> parametresini de <strong>0</strong> olarak değiştirebilirsiniz. Bu sayede POST değerlerinin maksimum büyüklüğünü kaldırabilirsiniz.</p>
+<p>Yorum halinde bulunan <strong>extension_dir</strong> parametresine de <code>C:/Localhost/PHP/ext</code> yolunu veriyoruz.</p>
+<p><strong>upload_max_filesize</strong> parametresini de <strong>2M</strong>’den <strong>20M</strong>’a çıkartabiliriz. Bu sayede daha büyük boyutlu dosyaları yükleyebiliriz.</p>
+<p><strong>Dynamic Extensions</strong> bölümünde aşağıda yer alan modüllerin başlarındaki yorum satırlarını kaldırarak aktif edebilirsiniz.</p>
+<ul>
+<li>php_bz2</li>
+<li>php_curl</li>
+<li>php_fileinfo</li>
+<li>php_gd2</li>
+<li>php_gettext</li>
+<li>php_imap</li>
+<li>php_mbstring</li>
+<li>php_mysql</li>
+<li>php_mysqli</li>
+<li>php_pdo_mysql</li>
+</ul>
+<p>Gerekli düzenlemeleri yaptığımıza göre kaydedebiliriz. Test etmek amaçlı <code>C:/Localhost/PHP</code> dizininde <code>php.exe -i</code> komutunu çalıştırabilirsiniz.</p>
+<h2 id="apache-php-entegresi"><a class="no-style" href="#apache-php-entegresi" aria-label="Anchor link for: apache-php-entegresi">##</a>
+Apache - PHP Entegresi</h2>
+<p>Apache’ye modül olarak PHP eklemek için birkaç ayar yapmamız gerekiyor. <code>C:/Localhost/Apache/conf/httpd.conf</code> dosyasını düzenlemek için açıyoruz.</p>
+<p>En alt satıra aşağıdaki kodları giriyoruz.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>#PHP5
+</span><span>LoadModule php5_module &quot;C:/Localhost/PHP/php5apache2_4.dll&quot;
+</span><span>PHPIniDir &quot;C:/Localhost/PHP&quot;
+</span></code></pre>
+<blockquote>
+<p><strong>php5apache2_4.dll</strong> dosyasının olup olmadığını kontrol etmekte yarar var.</p>
+</blockquote>
+<p><code>&lt;IfModule mime_module&gt;</code> kısmının içinde yer alan <strong>AddType</strong> listesine aşağıdaki eklemeleri yapıyoruz.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>AddType application/x-httpd-php .php
+</span><span>AddType application/x-httpd-php-source .phps
+</span></code></pre>
+<p>Dizinde şuan <strong>index.html</strong> dosyası ilk olarak açılıyor. Buna ayrıca <strong>index.php</strong> eklemek için, <strong>DirectoryIndex</strong> parametresine <code>index.php</code> ekliyoruz.</p>
+<h2 id="apache-nin-servis-olarak-eklenmesi"><a class="no-style" href="#apache-nin-servis-olarak-eklenmesi" aria-label="Anchor link for: apache-nin-servis-olarak-eklenmesi">##</a>
+Apache’nin Servis Olarak Eklenmesi</h2>
+<p>Windows başlatıldığında ayrıca Apache de başlatılması için <strong>Apache</strong>’yi hizmet olarak eklememiz gerekiyor. <code>cmd.exe</code>’yi yönetici haklarıyla çalıştırın. <code>C:/Localhost/Apache/bin</code> klasörüne ulaşarak ``httpd.exe -k install` komutunu gerçekleştirin.</p>
+<p>Görev Yöneticisini açarak Hizmetler kısmından Apache’yi çalıştırın.</p>
+<h2 id="php-test"><a class="no-style" href="#php-test" aria-label="Anchor link for: php-test">##</a>
+PHP Test</h2>
+<p>PHP’yi test etmek için <code>C:/Webserver/phpinfo.php</code> dosyası oluşturun ve içerisine <code>&lt;?php phpinfo();</code> ekleyin. Denemek için <a rel="noopener" target="_blank" href="http://localhost/phpinfo.php">http://localhost/phpinfo.php</a> bağlantısını kullanabilirsiniz.</p>
+<h2 id="mysql-kurulumu"><a class="no-style" href="#mysql-kurulumu" aria-label="Anchor link for: mysql-kurulumu">##</a>
+MySQL Kurulumu</h2>
+<p>MySQL kurulum işlemi için <a rel="noopener" target="_blank" href="https://dev.mysql.com/downloads/installer/">Mysql Installer</a> kullanacağız. Daha hızlı bir kurulum için <strong>web installer</strong>(mysql-installer-web-community-X.Y.Z.T.msi) indirebilirsiniz.</p>
+<p>Sözleşme kurallarını kabul ettikten sonra kurulum türünü seçmemiz gerekiyor. Sadece <strong>Server</strong> bizim için yeterli. <strong>Server Only</strong> seçerek devam ediyoruz. İndirme işleminden sonraki ayar kısmında <strong>Development Machine</strong> seçimiyle geliştirme ortamını seçmiş oluyoruz. <strong>Show Advanced Options</strong> kısmını seçiyoruz ve ilerliyoruz.</p>
+<p><strong>MySQL Root Password</strong> kısmında mysql için kullanacağımız şifreyi tanımlıyoruz.</p>
+<p>Diğer kısımları varsayılan bırakıp son aşamaya geçiyoruz ve ayarları uyguluyoruz.</p>
+<h2 id="phpmyadmin-kurulumu"><a class="no-style" href="#phpmyadmin-kurulumu" aria-label="Anchor link for: phpmyadmin-kurulumu">##</a>
+PHPMyAdmin Kurulumu</h2>
+<p>PHPMyAdmin kurulumda varsayılandan farklı olarak <strong>Alias</strong> kurulumu yapacağız. Bu sayede ileride oluşturacağımız <strong>sanal sunucularda</strong> da rahatlıkla PHPMyAdmin kullanabileceğiniz.</p>
+<p><a rel="noopener" target="_blank" href="http://www.phpmyadmin.net/home_page/index.php">PHPMyAdmin</a> sitesinden son versiyonu indiriyoruz ve <code>c:/Localhost/PHPMyAdmin</code> içerisine çıkartıyoruz.</p>
+<p><code>config.sample.inc.php</code> dosyasının ismini <code>config.inc.php</code> olarak değiştirip açıyoruz. İçindekileri silip aşağıdaki kodu kullanabilir veya gerekli düzenlemeleri teker teker yapabilirsiniz.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span style="color:#ab7967;">&lt;?php
+</span><span>
+</span><span>$</span><span style="color:#bf616a;">i </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>
+</span><span style="color:#65737e;">/*
+</span><span style="color:#65737e;">* First server
+</span><span style="color:#65737e;">*/
+</span><span>$</span><span style="color:#bf616a;">i</span><span>++;
+</span><span style="color:#65737e;">/* Authentication type */
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">auth_type</span><span>&#39;] = &#39;</span><span style="color:#a3be8c;">config</span><span>&#39;;
+</span><span style="color:#65737e;">/* Server parameters */
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">host</span><span>&#39;] = &#39;</span><span style="color:#a3be8c;">localhost</span><span>&#39;;
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">port</span><span>&#39;] = &#39;</span><span style="color:#a3be8c;">3306</span><span>&#39;;
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">connect_type</span><span>&#39;] = &#39;</span><span style="color:#a3be8c;">tcp</span><span>&#39;;
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">compress</span><span>&#39;] = </span><span style="color:#d08770;">false</span><span>;
+</span><span style="color:#65737e;">/* Select mysqli if your server has it */
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">extension</span><span>&#39;] = &#39;</span><span style="color:#a3be8c;">mysqli</span><span>&#39;;
+</span><span style="color:#65737e;">/* User for advanced features */
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">user</span><span>&#39;] = &#39;</span><span style="color:#a3be8c;">root</span><span>&#39;;
+</span><span>$</span><span style="color:#bf616a;">cfg</span><span>[&#39;</span><span style="color:#a3be8c;">Servers</span><span>&#39;][$</span><span style="color:#bf616a;">i</span><span>][&#39;</span><span style="color:#a3be8c;">password</span><span>&#39;] = &#39;</span><span style="color:#a3be8c;">MYSQLSIFRE</span><span>&#39;;
+</span><span>
+</span><span style="color:#ab7967;">?&gt;
+</span></code></pre>
+<p>Buradaki <strong>MYSQLSIFRE</strong> alanına MySQL kurulumu yaparken girdiğiniz şifreyi girmeniz gerekiyor.</p>
+<p>PHPMyAdmin için gerekli ayarlamaları yaptık. Dosyayı kaydedip <code>c:/Localhost/Apache/conf/httpd.conf</code> dosyasına geçiyoruz. En alt satıra aşağıdaki kodları giriyoruz.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>#PHPMyAdmin
+</span><span>Alias /phpmyadmin &quot;c:/Localhost/PHPMyAdmin&quot;
+</span><span>&lt;Directory &quot;c:/Localhost/PHPMyAdmin&quot;&gt;
+</span><span>    Options Indexes FollowSymLinks
+</span><span>    AllowOverride All
+</span><span>    Require all granted
+</span><span>&lt;/Directory&gt;
+</span></code></pre>
+<p>Hangi sunucu olursa olsun sonuna <code>/phpmyadmin</code> eklendiğinde <code>c:/Localhost/PHPMyAdmin</code> çalışacak şekilde ayarladık.</p>
+<p>PHPMyAdmin ve MySQL testi için <a rel="noopener" target="_blank" href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> deneyebilirsiniz.</p>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2015-05-29-windows-apache-mysql-php-phpmyadmin-kurulumu.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

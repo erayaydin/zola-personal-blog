@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Linux Oxygine C++ Game Framework Kurulumu</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/oxygine-framework/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/oxygine-framework/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Linux Oxygine C++ Game Framework Kurulumu">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">oxygine-framework</span>
+</div>
+<time datetime="2015-04-08T12:00:00">Published on: <span class="accent-data">2015-04-08T12:00:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Linux Oxygine C++ Game Framework Kurulumu</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/oxygine-framework/#proje-dizinini-olusturma">Proje Dizinini Oluşturma</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/oxygine-framework/#oxygine-framework-indirme">Oxygine Framework İndirme</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/oxygine-framework/#sdl-kurulumu">SDL Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/oxygine-framework/#oxygine-framework-a-sdl-entegre-etme">Oxygine Framework’a SDL Entegre Etme</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/oxygine-framework/#kurulum-testi">Kurulum Testi</a>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<p>Linux ortamı için Oxygine C++ Game Framework’un kurulumu ile ilgili bir makaledir. Kurulum adımlarını takip ederek bir geliştirme ortamına
+sahip olacağız.</p>
+<h2 id="proje-dizinini-olusturma"><a class="no-style" href="#proje-dizinini-olusturma" aria-label="Anchor link for: proje-dizinini-olusturma">##</a>
+Proje Dizinini Oluşturma</h2>
+<p>Öncelikle kendimize bir çalışma ortamı oluşturmamız gerekiyor. İstediğiniz bir dizinde uygulama klasörü açın. Makalede bu oluşturduğunuz dizine
+<code>root</code> diyeceğiz.</p>
+<h2 id="oxygine-framework-indirme"><a class="no-style" href="#oxygine-framework-indirme" aria-label="Anchor link for: oxygine-framework-indirme">##</a>
+Oxygine Framework İndirme</h2>
+<p>C++ ile 2D oyun geliştirirken kullanacağımız Oxygine Framework’u <a rel="noopener" target="_blank" href="http://oxygine.org/download.php">buradan</a> indirebilirsiniz.</p>
+<blockquote>
+<p>Sayfada bize lazım olacak link <code>Download stable snaphot. Oxygine framework only.</code> kısmıdır. Yani sadece framework’u indirseniz yeterli. Diğer
+linklerde önceden derlenmiş <code>binary</code> dosyaları bulunur. Bunlara ihtiyacımız yok.</p>
+</blockquote>
+<p>İndirdiğiniz sıkıştırılmış dosyayı açın. <code>oxygine-framework</code> klasörünü <code>root</code> klasörü içerisine yapıştırın.</p>
+<p>Yeni klasör yapımız şu şekilde oldu.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">├─root
+</span><span style="color:#bf616a;">├─└</span><span> oxygine-framework
+</span><span style="color:#bf616a;">├───└</span><span> 3rdPartyTools
+</span><span style="color:#bf616a;">├───└</span><span> cmake
+</span><span style="color:#bf616a;">├───└</span><span> libs
+</span><span style="color:#bf616a;">├───└</span><span> ...
+</span></code></pre>
+<h2 id="sdl-kurulumu"><a class="no-style" href="#sdl-kurulumu" aria-label="Anchor link for: sdl-kurulumu">##</a>
+SDL Kurulumu</h2>
+<p>Oxygine, <strong>SDL</strong> kütüphanesini kullandığı için mecburen onu da yüklememiz gerekiyor.</p>
+<p>SDL’in <a rel="noopener" target="_blank" href="http://libsdl.org/hg.php">yükleme sayfasında</a> en alt kısmında bulunan <code>.tar.gz</code> uzantılı sıkıştırılmış dosya işimize yarayacaktır.</p>
+<p>İndirdiğiniz sıkıştırılmış dosyayı açın ve <code>SDL-X.X.X-XXXX</code> isimli klasörü <code>root</code> klasörü içerisine yapıştırın. Klasör ismini <code>SDL</code> olarak
+değiştirin.</p>
+<p>Terminal ile <code>root/SDL</code> klasörüne erişin ve şu komutları gerçekleştirin.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">./configure
+</span><span style="color:#bf616a;">mkdir</span><span> build
+</span><span style="color:#96b5b4;">cd</span><span> build
+</span><span style="color:#bf616a;">cmake</span><span> ../
+</span><span style="color:#bf616a;">make
+</span><span style="color:#bf616a;">sudo</span><span> make install
+</span></code></pre>
+<h2 id="oxygine-framework-a-sdl-entegre-etme"><a class="no-style" href="#oxygine-framework-a-sdl-entegre-etme" aria-label="Anchor link for: oxygine-framework-a-sdl-entegre-etme">##</a>
+Oxygine Framework’a SDL Entegre Etme</h2>
+<p>Oxygine Framework’un SDL’i kullanabilmesi için kütüphane dosyalarını Oxygine Framework içerisine yerleştirmemiz gerekiyor.</p>
+<p><code>root/SDL/build</code> içerisindeki</p>
+<ul>
+<li>libSDL2-2.0.so</li>
+<li>libSDL2-2.0.so.0</li>
+<li>libSDL2-2.0.so.0.4.0</li>
+<li>libSDL2.so</li>
+</ul>
+<p>dosyalarını <code>root/oxygine-framework/libs</code> klasörüne taşıyın/kopyalayın.</p>
+<h2 id="kurulum-testi"><a class="no-style" href="#kurulum-testi" aria-label="Anchor link for: kurulum-testi">##</a>
+Kurulum Testi</h2>
+<p>Kurulumu başarıyla yapıp yapmadığımızı kontrol etmek için <code>root/oxygine-framework/examples/Demo/proj.cmake/</code> klasörüne gelin ve şu komutu
+çalıştırın.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">sudo</span><span> chmod +x run.sh
+</span><span style="color:#bf616a;">sudo</span><span> ./run.sh
+</span></code></pre>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2015-04-08-oxygine-framework.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

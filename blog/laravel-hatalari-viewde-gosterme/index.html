@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Laravel - Hataları Viewde Gösterme</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/laravel-hatalari-viewde-gosterme/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/laravel-hatalari-viewde-gosterme/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Laravel - Hataları Viewde Gösterme">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">laravel-hatalari-viewde-gosterme</span>
+</div>
+<time datetime="2016-04-12T19:20:00">Published on: <span class="accent-data">2016-04-12T19:20:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Laravel - Hataları Viewde Gösterme</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+</ul>
+<hr>
+<div class="page-content">
+<p>Laravel’de <code>withError()</code> ile veya <em>Request Validation</em> sonucu döndürdüğünüz hataları göstermek için aşağıdaki kodu kullanabilirsiniz.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span>{% raw %}
+</span><span>@if($errors-&gt;has())
+</span><span>	@foreach ($errors-&gt;all() as $error)
+</span><span>		&lt;</span><span style="color:#bf616a;">div</span><span>&gt;{{ $error }}&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>	@endforeach
+</span><span>@endif
+</span><span>{% endraw %}
+</span></code></pre>
+<p><strong>Bootstrap Framework</strong> kullanıyorsanız aşağıdaki <em>snippet</em>’i kullanabilirsiniz.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span>{% raw %}
+</span><span>@if($errors-&gt;has())
+</span><span>	&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">alert alert-danger</span><span>&quot;&gt;
+</span><span>	@foreach ($errors-&gt;all() as $error)
+</span><span>		&lt;</span><span style="color:#bf616a;">p</span><span>&gt;{{ $error }}&lt;/</span><span style="color:#bf616a;">p</span><span>&gt;
+</span><span>	@endforeach
+</span><span>	&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>@endif
+</span><span>{% endraw %}
+</span></code></pre>
+<p><strong>Zurb Foundation Framework</strong> kullanıyorsanız aşağıdaki <em>snippet</em>’i kullanabilirsiniz.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span>{% raw %}
+</span><span>@if($errors-&gt;has())
+</span><span>	&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">callout alert</span><span>&quot;&gt;
+</span><span>	@foreach ($errors-&gt;all() as $error)
+</span><span>		&lt;</span><span style="color:#bf616a;">p</span><span>&gt;{{ $error }}&lt;/</span><span style="color:#bf616a;">p</span><span>&gt;
+</span><span>	@endforeach
+</span><span>	&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>@endif
+</span><span>{% endraw %}
+</span></code></pre>
+<p><strong>Semantic UI</strong> kullanıyorsanız aşağıdaki <em>snippet</em>’i kullanabilirsiniz.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span>{% raw %}
+</span><span>@if($errors-&gt;has())
+</span><span>	&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">ui negative message</span><span>&quot;&gt;
+</span><span>	@foreach ($errors-&gt;all() as $error)
+</span><span>		&lt;</span><span style="color:#bf616a;">p</span><span>&gt;{{ $error }}&lt;/</span><span style="color:#bf616a;">p</span><span>&gt;
+</span><span>	@endforeach
+</span><span>	&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>@endif
+</span><span>{% endraw %}
+</span></code></pre>
+<p><strong>UIKit</strong> kullanıyorsanız aşağıdaki <em>snippet</em>’i kullanabilirsiniz.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span>{% raw %}
+</span><span>@if($errors-&gt;has())
+</span><span>&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">class</span><span>=&quot;</span><span style="color:#a3be8c;">uk-alert uk-alert-danger</span><span>&quot;&gt;
+</span><span>	@foreach ($errors-&gt;all() as $error)
+</span><span>		&lt;</span><span style="color:#bf616a;">p</span><span>&gt;{{ $error }}&lt;/</span><span style="color:#bf616a;">p</span><span>&gt;
+</span><span>	@endforeach
+</span><span>&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>@endif
+</span><span>{% endraw %}
+</span></code></pre>
+<p>Yukarıdaki snippetleri olduğu gibi kullanabilirsiniz.</p>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2016-04-12-laravel-hatalari-viewde-gosterme.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

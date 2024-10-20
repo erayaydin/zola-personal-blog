@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Linux - SDL2 Kurulumu</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/linux-sdl2-kurulumu/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/linux-sdl2-kurulumu/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Linux - SDL2 Kurulumu">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">linux-sdl2-kurulumu</span>
+</div>
+<time datetime="2015-09-24T01:00:00">Published on: <span class="accent-data">2015-09-24T01:00:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Linux - SDL2 Kurulumu</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/linux-sdl2-kurulumu/#yum-paket-yoneticisi-ile-kurulum">Yum Paket Yöneticisi ile Kurulum</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/linux-sdl2-kurulumu/#apt-paket-yoneticisi-ile-kurulum">Apt Paket Yöneticisi ile Kurulum</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/linux-sdl2-kurulumu/#pacman-paket-yoneticisi-ile-kurulum">Pacman Paket Yöneticisi ile Kurulum</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/linux-sdl2-kurulumu/#kaynaktan-derleme">Kaynaktan Derleme</a>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<h3 id="yum-paket-yoneticisi-ile-kurulum"><a class="no-style" href="#yum-paket-yoneticisi-ile-kurulum" aria-label="Anchor link for: yum-paket-yoneticisi-ile-kurulum">###</a>
+Yum Paket Yöneticisi ile Kurulum</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">yum</span><span> install SDL2-devel
+</span></code></pre>
+<h3 id="apt-paket-yoneticisi-ile-kurulum"><a class="no-style" href="#apt-paket-yoneticisi-ile-kurulum" aria-label="Anchor link for: apt-paket-yoneticisi-ile-kurulum">###</a>
+Apt Paket Yöneticisi ile Kurulum</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">apt-get</span><span> install libsdl2-dev
+</span></code></pre>
+<h3 id="pacman-paket-yoneticisi-ile-kurulum"><a class="no-style" href="#pacman-paket-yoneticisi-ile-kurulum" aria-label="Anchor link for: pacman-paket-yoneticisi-ile-kurulum">###</a>
+Pacman Paket Yöneticisi ile Kurulum</h3>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pacman -S</span><span> sdl2
+</span></code></pre>
+<h3 id="kaynaktan-derleme"><a class="no-style" href="#kaynaktan-derleme" aria-label="Anchor link for: kaynaktan-derleme">###</a>
+Kaynaktan Derleme</h3>
+<blockquote>
+<p>Kaynaktan derlemek için <code>base-devel</code> paketinin yüklü olduğundan emin olunuz.</p>
+</blockquote>
+<p>Kaynak kodu tar.gz olarak <a rel="noopener" target="_blank" href="https://www.libsdl.org/download-2.0.php">buradan</a> indirin.</p>
+<p>İndirdiğiniz tar.gz dosyasını açın.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">tar -xf</span><span> SDL2-X.x.x.tar.gz
+</span></code></pre>
+<p>Açılan klasörün içeriğine gidelim. (<code>cd SDL2-X.x.x</code>)</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">./configure
+</span><span style="color:#bf616a;">make
+</span><span style="color:#bf616a;">make</span><span> install
+</span></code></pre>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2015-09-24-linux-sdl2-kurulumu.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

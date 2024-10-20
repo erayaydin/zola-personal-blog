@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Arch Linux - Ruby ve Jekyll Kurulumu</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Arch Linux - Ruby ve Jekyll Kurulumu">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">arch-linux-ruby-jekyll-kurulumu</span>
+</div>
+<time datetime="2015-09-24T01:58:00">Published on: <span class="accent-data">2015-09-24T01:58:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Arch Linux - Ruby ve Jekyll Kurulumu</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#ruby-kurulumu">Ruby Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#rubygems-ayarlamasi">RubyGems Ayarlaması</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#bundler-kurulumu">Bundler Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#jekyll-kurulumu">Jekyll Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#jekyll-baslangic-projesi-olusturma">Jekyll Başlangıç Projesi Oluşturma</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#jekyll-projesini-calistirma">Jekyll Projesini Çalıştırma</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#github-pages-gemlerini-yukleme">Github Pages Gemlerini Yükleme</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/arch-linux-ruby-jekyll-kurulumu/#ekstra-safe-yaml-psych-sorunu">Ekstra: safe_yaml Psych sorunu</a>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<h2 id="ruby-kurulumu"><a class="no-style" href="#ruby-kurulumu" aria-label="Anchor link for: ruby-kurulumu">##</a>
+Ruby Kurulumu</h2>
+<p>Ruby ile birlikte artık RubyGems de kuruluyor. O yüzden ayrıca bir RubyGems kurulumu
+yapmayacağız.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pacman -S</span><span> ruby
+</span></code></pre>
+<h2 id="rubygems-ayarlamasi"><a class="no-style" href="#rubygems-ayarlamasi" aria-label="Anchor link for: rubygems-ayarlamasi">##</a>
+RubyGems Ayarlaması</h2>
+<p>RubyGems kurulu fakat gemlerin içerisindeki çalıştırılabilir dosyaları direk
+çalıştıramıyoruz. Tam yol belirtmemiz gerekiyor. Bu sorunu çözmek için PATH dizinine
+RubyGems yolunu ekleyeceğiz. <code>~/.bashrc</code> dosyasına şu eklemeyi yapalım.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">PATH</span><span>=&quot;$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">ruby -e </span><span>&#39;</span><span style="color:#a3be8c;">print Gem.user_dir</span><span>&#39;</span><span style="color:#a3be8c;">)/bin:</span><span>$</span><span style="color:#bf616a;">PATH</span><span>&quot;
+</span></code></pre>
+<p><strong>Kurulu gemleri göster</strong>mek için</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> list
+</span></code></pre>
+<p><strong>Bir gem ile ilgili bilgi al</strong>mak için</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> spec gem_adi
+</span></code></pre>
+<p>Şu ana kadar yaptığımız komutların hepsi <code>--local</code> değeri ile çalışıyor. Yani bizim
+sistemimizdeki <strong>gem</strong>leri tarıyor/inceliyor. Eğer uzak sunucudaki gemleri incelemek
+istiyorsak <code>--remote</code> değeri eklememiz yeterli.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> spec mysql</span><span style="color:#bf616a;"> --remote
+</span></code></pre>
+<p>MySQL <strong>gem</strong>i yüklü olmasada uzak sunucudan bilgisini getirecektir.</p>
+<p><strong>Gem yükle</strong>mek için</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> install mysql
+</span></code></pre>
+<p>Bu komutla beraber <strong>mysql</strong> gem yüklenecektir fakat dökümantasyonları da indirecek.
+Eğer <strong>production</strong> ortamında kurulum yapıyorsanız dökümantasyona ihtiyacınız
+olmayabilir. Dökümantasyon olmadan kurulum yapmak için <code>--no-document</code> yapmanız
+yeterli.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> install mysql</span><span style="color:#bf616a;"> --no-document
+</span></code></pre>
+<p><strong>Yüklü gemleri güncelleştir</strong>mek için</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> update
+</span></code></pre>
+<h2 id="bundler-kurulumu"><a class="no-style" href="#bundler-kurulumu" aria-label="Anchor link for: bundler-kurulumu">##</a>
+Bundler Kurulumu</h2>
+<p><strong>Bundler</strong>, <strong>Ruby</strong>’nin paket yönetim amaçlı oluşturulmuş bir <strong>gem</strong>idir.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> install bundler
+</span></code></pre>
+<h2 id="jekyll-kurulumu"><a class="no-style" href="#jekyll-kurulumu" aria-label="Anchor link for: jekyll-kurulumu">##</a>
+Jekyll Kurulumu</h2>
+<p><strong>Ruby</strong> ve <strong>RubyGems</strong> kurulumu yaptığımıza göre <strong>Jekyll</strong> kurulumu yapabiliriz.</p>
+<p>Kurulumdan önce <strong>gem</strong>leri güncelleyelim.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> update
+</span></code></pre>
+<p><code>jekyll</code> <strong>gem</strong>i kuralım.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> install jekyll
+</span></code></pre>
+<h2 id="jekyll-baslangic-projesi-olusturma"><a class="no-style" href="#jekyll-baslangic-projesi-olusturma" aria-label="Anchor link for: jekyll-baslangic-projesi-olusturma">##</a>
+Jekyll Başlangıç Projesi Oluşturma</h2>
+<p><code>jekyll</code> <strong>gem</strong>i ile birlikte  <code>jekyll</code>  komutumuz geliyor. Örnek bir proje oluşturmak
+için şu komutu kullanmamız yeterli.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">jekyll</span><span> new proje_ismi
+</span></code></pre>
+<h2 id="jekyll-projesini-calistirma"><a class="no-style" href="#jekyll-projesini-calistirma" aria-label="Anchor link for: jekyll-projesini-calistirma">##</a>
+Jekyll Projesini Çalıştırma</h2>
+<p>Oluşturduğumuz projenin dizinine ulaşarak şu komutla jekyll’i çalıştırabiliriz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">jekyll</span><span> serve
+</span></code></pre>
+<p><code>http://127.0.0.1:4000</code> adresinden Jekyll projemizi inceleyebiliriz.</p>
+<h2 id="github-pages-gemlerini-yukleme"><a class="no-style" href="#github-pages-gemlerini-yukleme" aria-label="Anchor link for: github-pages-gemlerini-yukleme">##</a>
+Github Pages Gemlerini Yükleme</h2>
+<p>Jekyll projemizi Github Pages’e göre yapmamız için Github Pages’ın kullandığı
+<strong>gem</strong>leri kullanmamız gerekiyor. (Tabi ki localde oluşturup _site klasörünü
+yükleyebiliriz fakat saçma olmaz mı?)</p>
+<p>Projenin ana dizininde <code>Gemfile</code> isminde bir dosya oluşturun ve içeriğini şu şekilde
+düzenleyin.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#96b5b4;">source </span><span>&#39;</span><span style="color:#a3be8c;">https://rubygems.org</span><span>&#39;
+</span><span style="color:#bf616a;">gem </span><span>&#39;</span><span style="color:#a3be8c;">github-pages</span><span>&#39;
+</span></code></pre>
+<p><code>bundle install</code> komutu ile gerekli gemlerin yüklenmesini sağlayın.</p>
+<h2 id="ekstra-safe-yaml-psych-sorunu"><a class="no-style" href="#ekstra-safe-yaml-psych-sorunu" aria-label="Anchor link for: ekstra-safe-yaml-psych-sorunu">##</a>
+Ekstra: safe_yaml Psych sorunu</h2>
+<p>Eğer <code>uninitialized constant Psych::Nodes (NameError)</code> şeklinde bir hata alıyorsanız
+bunun sebebi Github-Pages’in belirli bir Psych versiyonu ile çalışmasından
+kaynaklanıyor. Eski bir psych versiyonunu kullanmanız gerekiyor.</p>
+<p>Github Pages projenizi şu komut ile çalıştırırsanız bir sorun oluşmayacaktır.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gem</span><span> cleanup
+</span><span style="color:#bf616a;">bundle</span><span> exec jekyll serve
+</span></code></pre>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2015-09-24-arch-linux-ruby-jekyll-kurulumu.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

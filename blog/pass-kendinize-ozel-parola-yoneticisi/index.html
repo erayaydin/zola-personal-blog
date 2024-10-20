@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Pass ile Kendinize Özel Parola Yöneticinizi Yapın</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Pass ile Kendinize Özel Parola Yöneticinizi Yapın">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">pass-kendinize-ozel-parola-yoneticisi</span>
+</div>
+<time datetime="2018-02-09T09:00:00">Published on: <span class="accent-data">2018-02-09T09:00:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Pass ile Kendinize Özel Parola Yöneticinizi Yapın</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#pass-nedir">Pass Nedir?</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#arch-linux-uzerinde-pass-kurulumu">Arch Linux Üzerinde Pass Kurulumu</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#kullanimi">Kullanımı</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#gnupg-kurulumu">GnuPG Kurulumu</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#password-store-olusturulmasi">Password Store Oluşturulması</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#yeni-bir-parola-kayit-etme">Yeni Bir Parola Kayıt Etme</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#yeni-bir-parola-olusturma">Yeni Bir Parola Oluşturma</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#kayitli-parola-listesini-goruntuleme">Kayıtlı Parola Listesini Görüntüleme</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#bir-kayittaki-parolayi-alma">Bir Kayıttaki Parolayı Alma</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#kayit-menusu">Kayıt Menüsü</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#git-entegrasyonu">Git Entegrasyonu</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#android-cihazinizda-kayitlara-erisin">Android Cihazınızda Kayıtlara Erişin</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#openkeychain">OpenKeychain</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#password-store">Password Store</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#firefox-uzerinde-pass">Firefox Üzerinde Pass</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#chrome-chromium">Chrome &#x2F; Chromium</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#windows">Windows</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/pass-kendinize-ozel-parola-yoneticisi/#contributors">Contributors</a>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<h1 id="pass-nedir"><a class="no-style" href="#pass-nedir" aria-label="Anchor link for: pass-nedir">#</a>
+Pass Nedir?</h1>
+<p><code>pass</code> yazılımı komut arayüzünde çalışan basit bir parola yöneticisidir. <code>git</code>
+ve <code>tree</code> araçlarını kullanarak yazılmış bir <code>shell</code> kodlamasıdır. Bu sebeple
+kullanımı ve geliştirilmesi oldukça kolaydır.</p>
+<p>Bu yazı içerisinde <strong>Arch Linux</strong>, <strong>Android</strong> ve <strong>Windows</strong> ortamlarında
+nasıl kurulumu yapıldığını ek olarak <strong>Chromium</strong>, <strong>Chrome</strong> ve <strong>Firefox</strong>
+üzerinde nasıl entegrasyonu yapılabileceğini örnekledim.</p>
+<h1 id="arch-linux-uzerinde-pass-kurulumu"><a class="no-style" href="#arch-linux-uzerinde-pass-kurulumu" aria-label="Anchor link for: arch-linux-uzerinde-pass-kurulumu">#</a>
+Arch Linux Üzerinde Pass Kurulumu</h1>
+<p>Arch Linux üzerinde kurulumu yapmak için <code>pass</code> paketini yüklemeniz yeterlidir.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pacman</span><span style="color:#bf616a;"> -Sy</span><span> pass
+</span></code></pre>
+<p>Ek olarak, grafik arayüzü istiyorsanız <code>qtpass</code> paketini de yükleyebilirsiniz.</p>
+<h1 id="kullanimi"><a class="no-style" href="#kullanimi" aria-label="Anchor link for: kullanimi">#</a>
+Kullanımı</h1>
+<p>Bir parola yöneticisi kullanacağımız için güvenliğinin sağlanması gerekiyor. Bu
+sebeple <strong>GnuPG</strong> ile kendinize bir anahtar dizisi oluşturmanız gerekli.</p>
+<h2 id="gnupg-kurulumu"><a class="no-style" href="#gnupg-kurulumu" aria-label="Anchor link for: gnupg-kurulumu">##</a>
+GnuPG Kurulumu</h2>
+<p>Arch Linux üzerinde <code>gnupg</code> paketini yüklemeniz gereklidir.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pacman</span><span style="color:#bf616a;"> -Sy</span><span> gnupg
+</span></code></pre>
+<p>Ardından kendinize bir anahtar dizisi oluşturmalısınız.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> gpg</span><span style="color:#bf616a;"> --full-gen-key
+</span></code></pre>
+<h2 id="password-store-olusturulmasi"><a class="no-style" href="#password-store-olusturulmasi" aria-label="Anchor link for: password-store-olusturulmasi">##</a>
+Password Store Oluşturulması</h2>
+<p>Arch Linux üzerinde <code>pass</code> kullanarak kendimize ait bir dizin oluşturacağız.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass init &lt;gpg-id&gt;
+</span></code></pre>
+<p>Artık <code>pass</code> üzerinde parolalarımızı tutabiliriz.</p>
+<h2 id="yeni-bir-parola-kayit-etme"><a class="no-style" href="#yeni-bir-parola-kayit-etme" aria-label="Anchor link for: yeni-bir-parola-kayit-etme">##</a>
+Yeni Bir Parola Kayıt Etme</h2>
+<p>Burada hali hazırda olan bir parolayı kayıt olarak eklemek için kullanıyoruz.
+Yani program otomatik olarak parola üretmek yerine sizden parola girişi
+bekleyecektir.</p>
+<p>Bir kayıt girerken hiyerarşik olarak isimlendirme yapmalısınız. Örneğin
+gmail.com üzerinde pass@gmail.com isimli bir kayıt oluşturacaksınız. Bu kayıtın
+ismi <code>gmail.com/pass@gmail.com</code> olmalıdır.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass insert gmail.com/pass@gmail.com
+</span></code></pre>
+<h2 id="yeni-bir-parola-olusturma"><a class="no-style" href="#yeni-bir-parola-olusturma" aria-label="Anchor link for: yeni-bir-parola-olusturma">##</a>
+Yeni Bir Parola Oluşturma</h2>
+<p>Burada ise parola <code>pass</code> tarafından otomatik oluşturulacaktır.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass generate gmail.com/pass2@gmail.com
+</span><span style="color:#bf616a;">The</span><span> generated password for pass2@gmail.com is:
+</span><span style="color:#bf616a;">0iV1!?{4u</span><span>&quot;</span><span style="color:#a3be8c;">8I#F&amp;8=34!JS{S]
+</span></code></pre>
+<p>Otomatik parola oluştururken dilerseniz uzunluk da verebilirsiniz. Bunun için
+kayıt isminden sonra sayıyı girmeniz yeterli.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass generate gmail.com/pass3@gmail.com 6
+</span><span style="color:#bf616a;">The</span><span> generated password for gmail.com/pass3@gmail.com is:
+</span><span style="color:#bf616a;">D0/+qh
+</span></code></pre>
+<p>Ek olarak, bazı website ve yazılımlarda semboller kabul edilmemekte. Bu
+sebeple oluştururken dilerseniz sembol kullanmamasını isteyebilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass generate</span><span style="color:#bf616a;"> --no-symbols</span><span> gmail.com/pass4@gmail.com
+</span><span style="color:#bf616a;">The</span><span> generated password for gmail.com/pass4@gmail.com is:
+</span><span style="color:#bf616a;">zyT0XpJkmA0k7KfmdN4gVorY5
+</span></code></pre>
+<h2 id="kayitli-parola-listesini-goruntuleme"><a class="no-style" href="#kayitli-parola-listesini-goruntuleme" aria-label="Anchor link for: kayitli-parola-listesini-goruntuleme">##</a>
+Kayıtlı Parola Listesini Görüntüleme</h2>
+<p>Kayıtlı parolarınızı görüntülemek için <strong>GPG</strong> anahtarınızı girmenize gerek
+yoktur. Lakin bu kayıttaki parolayı görmek için bu anahtara ihtiyacımız olacak.
+Bu konu bir sonraki başlıkta.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass
+</span><span style="color:#bf616a;">Password</span><span> Store
+</span><span style="color:#bf616a;">└──</span><span> gmail.com
+</span><span>    </span><span style="color:#bf616a;">└──</span><span> pass@gmail.com
+</span></code></pre>
+<h2 id="bir-kayittaki-parolayi-alma"><a class="no-style" href="#bir-kayittaki-parolayi-alma" aria-label="Anchor link for: bir-kayittaki-parolayi-alma">##</a>
+Bir Kayıttaki Parolayı Alma</h2>
+<p>Kayıttaki parolayı almak için kayıt ismini girmeniz yeterli. Komut sonrası
+sizden <strong>GnuPG</strong> parola isteyecektir.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass gmail.com/pass@gmail.com
+</span><span style="color:#bf616a;">0iV1!?{4u</span><span>&quot;</span><span style="color:#a3be8c;">8I#F&amp;8=34!JS{S]
+</span></code></pre>
+<p>Bu parolayı komut kısmından almak yerine <code>xclip</code> yüklüyse direk kopyalanmış
+olarak alabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass</span><span style="color:#bf616a;"> -c</span><span> gmail.com/pass@gmail.com
+</span><span style="color:#bf616a;">Copied</span><span> gmail.com/pass@gmail.com to clipboard. Will clear in 45 seconds.
+</span></code></pre>
+<h2 id="kayit-menusu"><a class="no-style" href="#kayit-menusu" aria-label="Anchor link for: kayit-menusu">##</a>
+Kayıt Menüsü</h2>
+<p>Sisteminizde <code>dmenu</code> kuruluysa kayıtlara ekranda menü aracılığıyla da
+ulaşabilirsiniz. Bunun için <code>passmenu</code> çalıştırmanız yeterlidir.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> passmenu
+</span></code></pre>
+<h2 id="git-entegrasyonu"><a class="no-style" href="#git-entegrasyonu" aria-label="Anchor link for: git-entegrasyonu">##</a>
+Git Entegrasyonu</h2>
+<p>Parola kayıtlarınızı diğer cihazlarınızla paylaşmak için ve versiyon kontrolü
+ile güvenli bir şekilde tutmak için <strong>git</strong> kullanabilirsiniz. <code>pass git</code>
+komutundan sonra verdiğiniz tüm komutlar <code>git</code> ile <code>pass</code> ın bulunduğu dizinde
+gerçekleşecektir.</p>
+<p>Öncelike depoyu oluşturalım.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass git init
+</span></code></pre>
+<p>Ardından oluşturduğumuz bir <code>git</code> deposunu origin olarak ekleyelim.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> pass git remote add origin &lt;git-adres&gt;
+</span></code></pre>
+<p>Sistemdeki değişiklikleri iletmek istediğinizde de <code>push</code> yapmanız yeterli.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> git push</span><span style="color:#bf616a;"> -u --all
+</span></code></pre>
+<p>Başka bir sistemde yaptığınız ve gönderdiğiniz değişiklikleri <code>pull</code> ile
+alabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> git pull
+</span></code></pre>
+<h1 id="android-cihazinizda-kayitlara-erisin"><a class="no-style" href="#android-cihazinizda-kayitlara-erisin" aria-label="Anchor link for: android-cihazinizda-kayitlara-erisin">#</a>
+Android Cihazınızda Kayıtlara Erişin</h1>
+<h2 id="openkeychain"><a class="no-style" href="#openkeychain" aria-label="Anchor link for: openkeychain">##</a>
+OpenKeychain</h2>
+<p>Android cihazınızda parolalara erişmek için öncelikle <strong>GnuPG</strong> anahtarınızı
+kullanabiliyor olmanız gerekiyor. Bunun için <a rel="noopener" target="_blank" href="https://play.google.com/store/apps/details?id=org.sufficientlysecure.keychain&amp;hl=en"><strong>OpenKeychain</strong></a> isimli Android
+programını kullanabilirsiniz.</p>
+<p><strong>OpenKeychain</strong> uygulamasına ekleyeceğiniz <strong>GPG</strong> anahtarını aşağıdaki komut
+ile kurulumu yaptığınız sistem üzerinde alabilirsiniz.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ gpg --export-secret-key &lt;gpg-id&gt; &gt; keys.asc
+</span></code></pre>
+<p>Ardından bu dosyayı <strong>android</strong> cihazınıza taşıyarak <strong>OpenKeychain</strong> üzerinde
+ekleyin.</p>
+<h2 id="password-store"><a class="no-style" href="#password-store" aria-label="Anchor link for: password-store">##</a>
+Password Store</h2>
+<p>Password Store android uygulamasına dilerseniz <em>play store</em> üzerinden
+erişebilirsiniz lakin <strong>F-Droid</strong> üzerinden kurulum daha sağlıklı ve güncel
+olacaktır.</p>
+<p><a rel="noopener" target="_blank" href="https://f-droid.org/FDroid.apk">F-Droid</a> apk dosyasını android cihazınıza
+yükleyin. Ardından <strong>F-Droid</strong> üzerinden <strong>Password Store</strong> uygulamasını
+yükleyin.</p>
+<p>Dilerseniz <a rel="noopener" target="_blank" href="https://f-droid.org/repo/com.zeapo.pwdstore_93.apk">buradan</a> da
+direk Password Store apk dosyasını indirebilirsiniz.</p>
+<p>Password Store uygulamasında ayarlar kısmında <strong>Select OpenPGP Provider</strong> bölümünde <strong>OpenKeychain</strong>’in seçili olduğundan emin olun.</p>
+<p>Password Store uygulamasındaki ayarlar kısmından öncelike <strong>Generate SSH key pair</strong> ile bir SSH anahtarı üretmeniz gerekmekte. Ardından yine aynı menüde bulunan <strong>View generated public SSH key</strong> ile oluşturduğunuz anahtarın public anahtarını alın. Bu anahtarı <strong>git</strong> sunucunuzda yetki vermek için kullanmalısınız.</p>
+<p>Son olarak <strong>git server settings</strong> kısmından git sunucunuzu tanımlayın ve senkronizasyon işlemi yapın.</p>
+<p>Artık uygulama üzerinde <code>pull</code> ve <code>push</code> yapabilirsiniz. Yani iki ortamda da
+kayıtlara erişebilir ve yeni kayıt ekleyebilirsiniz.</p>
+<h2 id="firefox-uzerinde-pass"><a class="no-style" href="#firefox-uzerinde-pass" aria-label="Anchor link for: firefox-uzerinde-pass">##</a>
+Firefox Üzerinde Pass</h2>
+<p>Firefox tarayıcısını kullanmadığım için detaylı bilgim yok. İşlemi yapan arkadaşlar yazıyı <strong>github</strong> üzerinde düzenleyerek <strong>pull request</strong> gönderirse sevinirim.</p>
+<p>Kullanılması gereken <strong>extension</strong> <a rel="noopener" target="_blank" href="https://github.com/jvenant/passff#readme">burada</a></p>
+<h2 id="chrome-chromium"><a class="no-style" href="#chrome-chromium" aria-label="Anchor link for: chrome-chromium">##</a>
+Chrome / Chromium</h2>
+<p>Chromium üzerinde parolanıza erişmek için <code>browserpass</code> eklentisini kullanabilirsiniz.</p>
+<p>Arch Linux üzerinde kurulumu için aşağıdaki komutu kullanabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> yaourt</span><span style="color:#bf616a;"> -Sy</span><span> browserpass
+</span></code></pre>
+<p>OSX,Linux ve Windows ortamları için <a rel="noopener" target="_blank" href="https://github.com/dannyvankooten/browserpass/releases">buradan</a> indirebilirsiniz.</p>
+<p>Chrome eklentisine <a rel="noopener" target="_blank" href="https://chrome.google.com/webstore/detail/browserpass/naepdomgkenhinolocfifgehidddafch">buradan</a> ulaşabilirsiniz.</p>
+<p>Bulunduğunuz sitede otomatik doldurmasını istediğinizde <code>Ctrl+Shift+L</code> yapabilirsiniz yada tarayıcıda eklenen kilit ikonunu kullanabilirsiniz.</p>
+<h2 id="windows"><a class="no-style" href="#windows" aria-label="Anchor link for: windows">##</a>
+Windows</h2>
+<p>Windows ortamında kurulumunu yapmadım. Yapan arkadaşlar anlatımını yapıp bu yazıyı düzenlerse sevinirim.</p>
+<p>Kullanılabilecek programa <a rel="noopener" target="_blank" href="https://github.com/mbos/Pass4Win#readme">buradan</a> ulaşabilirsiniz.</p>
+<h1 id="contributors"><a class="no-style" href="#contributors" aria-label="Anchor link for: contributors">#</a>
+Contributors</h1>
+<ul>
+<li><a rel="noopener" target="_blank" href="https://erayaydin.github.io">Eray Aydın</a></li>
+</ul>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2018-02-09-pass-ozel-parola-yoneticisi.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

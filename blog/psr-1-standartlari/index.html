@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>PSR-1 Standartları</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/psr-1-standartlari/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/psr-1-standartlari/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="PSR-1 Standartları">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">psr-1-standartlari</span>
+</div>
+<time datetime="2015-04-19T12:00:00">Published on: <span class="accent-data">2015-04-19T12:00:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>PSR-1 Standartları</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/psr-1-standartlari/#ozet">ÖZET</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/psr-1-standartlari/#dosyalar">Dosyalar</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/psr-1-standartlari/#php-etiketleri">PHP Etiketleri</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/psr-1-standartlari/#karakter-kodlamasi">Karakter Kodlaması</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/psr-1-standartlari/#yan-islem">Yan-İşlem</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/psr-1-standartlari/#namespace-ve-sinif-isimleri">Namespace ve Sınıf İsimleri</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/psr-1-standartlari/#sinif-sabitleri-ayarlar-ve-metotlar">Sınıf Sabitleri, Ayarlar ve Metotlar</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/psr-1-standartlari/#sabitler">Sabitler</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/psr-1-standartlari/#ayarlar">Ayarlar</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/psr-1-standartlari/#metotlar">Metotlar</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<p>Bu bölümde standart kodlama elementlerinin kullanımı sırasında yapmanız gerekenleri öğreneceksiniz.</p>
+<h2 id="ozet"><a class="no-style" href="#ozet" aria-label="Anchor link for: ozet">##</a>
+ÖZET</h2>
+<ul>
+<li>PHP dosyalarınızda sadece <code>&lt;?php</code> ve <code>&lt;?=</code> etiketlerini kullanabilirsiniz.</li>
+<li>Dosyanız kodlaması UTF-8 BOM’suz olmalıdır.</li>
+<li>Dosyalarınız ya sadece deklare etmeli (sınıflar, fonksiyonlar, sabitler, vs.) yada yan-işlem yapmalıdır.(çıktı verme, .ini/.xml güncelleme vs.). Kesinlikle iki işlem için de kullanmayın.</li>
+<li>Namespace ve sınıflar, PSR’ninautoloading(otomatik yükleme) sistemine uymalıdır. [PSR-0, PSR-4]</li>
+<li>Sınıf isimleri baş harfi büyük olmalıdır. (Örn; BlogController, SystemLog)</li>
+<li>Sınıf sabitleri tamamı büyük olmalı ve alt çizgi ile ayırılmalıdır. (Örn; DIRECTORY_SEPARATOR, DEBUG</li>
+<li>Metot isimleri, ilk harf hariç kelime başları büyük olmalıdır. (Örn; showIndex, editPost)</li>
+</ul>
+<h2 id="dosyalar"><a class="no-style" href="#dosyalar" aria-label="Anchor link for: dosyalar">##</a>
+Dosyalar</h2>
+<h3 id="php-etiketleri"><a class="no-style" href="#php-etiketleri" aria-label="Anchor link for: php-etiketleri">###</a>
+PHP Etiketleri</h3>
+<p>PHP kodunuz <code>&lt;?php ... ?&gt;</code> veya <code>&lt;?= ... ?&gt;</code> etiketlerini kullanmalıdır.</p>
+<h3 id="karakter-kodlamasi"><a class="no-style" href="#karakter-kodlamasi" aria-label="Anchor link for: karakter-kodlamasi">###</a>
+Karakter Kodlaması</h3>
+<p>PHP dosyanızın kodlaması UTF-8 BOM’suz olmalıdır.</p>
+<h3 id="yan-islem"><a class="no-style" href="#yan-islem" aria-label="Anchor link for: yan-islem">###</a>
+Yan-İşlem</h3>
+<p>Bir dosyanız ya sadece deklare yada yan-işlem yapmalıdır.</p>
+<p>“Yan-işlem” derken bahsetmek istediğim, bir yapı oluştururken hem sınıf, metot, sabit deklare edip hem de kullanılmamalıdır. Dosya include yapılmalıdır.</p>
+<p>“Yan-işlem” sadece çıktı vermek değildir, ayrıca servise bağlanmak, include/require yapmak, .ini/.xml düzenlemek, exceptionlar, global ve statik değer düzenleme, dosyadan okuma veya dosyaya yazmak gibi işlemlerdir.</p>
+<p>Aşağıdaki örnek, hem deklare eden hem de yan-işlem yapan bir kod örneği.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span style="color:#ab7967;">&lt;?php
+</span><span style="color:#65737e;">// yan-işlem: ini ayarlarını düzenleme
+</span><span style="color:#96b5b4;">ini_set</span><span>(&quot;</span><span style="color:#a3be8c;">error_reporting</span><span>&quot;, E_ALL);
+</span><span>
+</span><span style="color:#65737e;">// yan-işlem: dosya include etme
+</span><span style="color:#b48ead;">include </span><span>&quot;</span><span style="color:#a3be8c;">file.php</span><span>&quot;;
+</span><span>
+</span><span style="color:#65737e;">// yan-işlem: çıktı verme
+</span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">&lt;html&gt;</span><span style="color:#96b5b4;">\n</span><span>&quot;;
+</span><span>
+</span><span style="color:#65737e;">// deklarasyon
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">foo</span><span>()
+</span><span>{
+</span><span>	</span><span style="color:#65737e;">// ...
+</span><span>}
+</span></code></pre>
+<p>Aşağıdaki örnek de yan-işlem yapmayan ve deklarasyon yapan bir dosyadır.</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span style="color:#ab7967;">&lt;?php
+</span><span style="color:#65737e;">// deklarasyon
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">foo</span><span>()
+</span><span>{
+</span><span>	</span><span style="color:#65737e;">// ...
+</span><span>}
+</span><span>
+</span><span style="color:#65737e;">// koşula bağlı deklarasyon, yan-işlem **değildir**.
+</span><span style="color:#b48ead;">if </span><span>( ! </span><span style="color:#96b5b4;">function_exists</span><span>(&quot;</span><span style="color:#a3be8c;">bar</span><span>&quot;)) {
+</span><span>	</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">bar</span><span>()
+</span><span>    {
+</span><span>    	</span><span style="color:#65737e;">// ...
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h2 id="namespace-ve-sinif-isimleri"><a class="no-style" href="#namespace-ve-sinif-isimleri" aria-label="Anchor link for: namespace-ve-sinif-isimleri">##</a>
+Namespace ve Sınıf İsimleri</h2>
+<p>Namespaceler ve sınıflar, PSR’nin otomatik yükleme kurallarına uymalıdır. [PSR-0, PSR-4]</p>
+<p>Bu demek oluyor ki, her sınıf kendi dosyasının içinde ve en az 1 namespace altında olmalıdır.</p>
+<p>Sınıf isimleri baş harfleri büyük tanımlanmalıdır. (Örn; StockController)</p>
+<p>PHP 5.3 ve sonrasını kullananlar normal namespace kullanabilir. Örnek olarak;</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span style="color:#ab7967;">&lt;?php
+</span><span style="color:#65737e;">// PHP 5.3 ve sonrası:
+</span><span style="color:#b48ead;">namespace </span><span>Vendor\Controller;
+</span><span>
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Foo
+</span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">}
+</span></code></pre>
+<p>PHP 5.2.x ve öncesini kullananlar şu şekilde kullanabilir:</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span style="color:#ab7967;">&lt;?php
+</span><span style="color:#65737e;">// PHP 5.2.x ve öncesi:
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Vendor_Controller_Foo
+</span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">}
+</span></code></pre>
+<h2 id="sinif-sabitleri-ayarlar-ve-metotlar"><a class="no-style" href="#sinif-sabitleri-ayarlar-ve-metotlar" aria-label="Anchor link for: sinif-sabitleri-ayarlar-ve-metotlar">##</a>
+Sınıf Sabitleri, Ayarlar ve Metotlar</h2>
+<p>Buradaki “sınıf“tan kastım, tüm sınıflardır.(class, interface, trait)</p>
+<h3 id="sabitler"><a class="no-style" href="#sabitler" aria-label="Anchor link for: sabitler">###</a>
+Sabitler</h3>
+<p>Sınıf sabitleri tamamen büyük olmalıdır ve alt çizgi ile kelimeler ayrılmalıdır. Örnek olarak:</p>
+<pre data-lang="php" style="background-color:#2b303b;color:#c0c5ce;" class="language-php "><code class="language-php" data-lang="php"><span style="color:#ab7967;">&lt;?php
+</span><span style="color:#b48ead;">namespace </span><span>Vendor\Controller;
+</span><span>
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Foo
+</span><span style="color:#eff1f5;">{
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">const </span><span style="color:#d08770;">VERSION       </span><span>= &#39;</span><span style="color:#a3be8c;">1.0</span><span>&#39;</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">const </span><span style="color:#d08770;">DATE_APPROVED </span><span>= &#39;</span><span style="color:#a3be8c;">2014-12-12</span><span>&#39;</span><span style="color:#eff1f5;">;
+</span><span style="color:#eff1f5;">}
+</span></code></pre>
+<h3 id="ayarlar"><a class="no-style" href="#ayarlar" aria-label="Anchor link for: ayarlar">###</a>
+Ayarlar</h3>
+<p>Şuan için belirlenmiş bir sabit yok. $BasHarfleriBuyuk, $ilkHarfiKucuk, veya $alt_cizgi isimlerini istediğiniz gibi kullanabilirsiniz.</p>
+<p>Fakat unutulmamalıdır ki, adlandırma kuralları makul olmalıdır. Anlaşılır bir isim seçilmelidir.</p>
+<h3 id="metotlar"><a class="no-style" href="#metotlar" aria-label="Anchor link for: metotlar">###</a>
+Metotlar</h3>
+<p>Metot isimleri ilk harfi küçük ve diğer kelime başları büyük olmalıdır. (Örn; showIndex, editPost)</p>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2015-04-19-psr-1.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Laravel - Elixir</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/laravel-elixir/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/laravel-elixir/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Laravel - Elixir">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">laravel-elixir</span>
+</div>
+<time datetime="2016-05-21T19:22:00">Published on: <span class="accent-data">2016-05-21T19:22:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Laravel - Elixir</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/laravel-elixir/#kurulum">Kurulum</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#node-kurulumu">Node Kurulumu</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#gulp">Gulp</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#laravel-elixir">Laravel Elixir</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/laravel-elixir/#calistirma">Çalıştırma</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/laravel-elixir/#stil-dosyalariyla-calismak">Stil Dosyalarıyla Çalışmak</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#less">Less</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#sass">Sass</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#duz-css">Düz CSS</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#kaynak-haritasi">Kaynak Haritası</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/laravel-elixir/#script-dosyalariyla-calismak">Script Dosyalarıyla Çalışmak</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#coffeescript">CoffeeScript</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#browserify">Browserify</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#babel">Babel</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/laravel-elixir/#scriptler">Scriptler</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/laravel-elixir/#dosyalari-klasorleri-kopyalama">Dosyaları &amp; Klasörleri Kopyalama</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/laravel-elixir/#versiyonlama">Versiyonlama</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/laravel-elixir/#browsersync">BrowserSync</a>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<p>Laravel <strong>Elixir</strong>, Gulp görevlerinizi kolay bir şekilde yönetmenizi sağlar. CSS ve Javascript derleyicileriyle birlikte test araçlarını da kullanmanıza imkan verir. Eğer daha önce Gulp ve asset yönetimi yaptıysanız Elixir işinize çok yarayacaktır.</p>
+<h2 id="kurulum"><a class="no-style" href="#kurulum" aria-label="Anchor link for: kurulum">##</a>
+Kurulum</h2>
+<h3 id="node-kurulumu"><a class="no-style" href="#node-kurulumu" aria-label="Anchor link for: node-kurulumu">###</a>
+Node Kurulumu</h3>
+<p>Elixir’i kullanmak için geliştirme yaptığınız sistemde <strong>Node.js</strong>’nin kurulu olması gerekmektedir.</p>
+<p>Node.js’nin kurulu olup olmadığını görmek için aşağıdaki komutla versiyon kontrolü yapabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">node -v
+</span></code></pre>
+<p>Windows ve OS X için Node.js kurulumunu <a rel="noopener" target="_blank" href="https://nodejs.org/en/download/">nodejs.org</a> adresinden yapabilirsiniz.</p>
+<p>Arch Linux kullanıcıları da <code>pacman -S nodejs</code> ile kurulum yapabilir.</p>
+<h3 id="gulp"><a class="no-style" href="#gulp" aria-label="Anchor link for: gulp">###</a>
+Gulp</h3>
+<p>NodeJS kurulumundan sonra <strong>Gulp</strong> kurulumu yapmamız gerekiyor.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">npm</span><span> install</span><span style="color:#bf616a;"> -g</span><span> gulp
+</span></code></pre>
+<h3 id="laravel-elixir"><a class="no-style" href="#laravel-elixir" aria-label="Anchor link for: laravel-elixir">###</a>
+Laravel Elixir</h3>
+<p>Gulp ve NodeJS kurulumundan sonra geriye kalan Elixir kurulumunu yapmak. Bunun için Laravel projenizin olduğu klasöre ulaşıp <code>package.json</code> dosyasındaki NPM paketlerini kurmanız gerekiyor.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">npm</span><span> install
+</span></code></pre>
+<h2 id="calistirma"><a class="no-style" href="#calistirma" aria-label="Anchor link for: calistirma">##</a>
+Çalıştırma</h2>
+<p>Elixir’i çalıştırmak için özel bir komuta ihtiyacınız yok. Normal bir şekilde <code>gulp</code> çalıştırmanız yeterli. <strong>Production</strong> ortamında <code>--production</code> parametresi ekleyerek Elixir’in CSS ve JS dosyalarını küçültmesini isteyebilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># Tüm gulp görevlerini çalıştır
+</span><span style="color:#bf616a;">gulp
+</span><span>
+</span><span style="color:#65737e;"># Tüm gulp görevlerini çalıştır ve CSS/JS dosyalarını küçült
+</span><span style="color:#bf616a;">gulp --production
+</span></code></pre>
+<p><strong>Dosya Değişimlerini Kontrol Etmek</strong></p>
+<p>Her değişiklikten sonra <code>gulp</code> komutunu çalıştırmak zor olacaktır. Bu nedenle dosya değişikliğinde otomatik olarak <code>gulp</code> çalışmasını istiyorsanız <code>watch</code> görevini çalıştırabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">gulp</span><span> watch
+</span></code></pre>
+<h2 id="stil-dosyalariyla-calismak"><a class="no-style" href="#stil-dosyalariyla-calismak" aria-label="Anchor link for: stil-dosyalariyla-calismak">##</a>
+Stil Dosyalarıyla Çalışmak</h2>
+<p><code>gulpfile.js</code> dosyası yazdığınız tüm Elixir görevlerini barındırmaktadır. Bu dosya üzerinden elixir işlemlerini belirteceğiz.</p>
+<h3 id="less"><a class="no-style" href="#less" aria-label="Anchor link for: less">###</a>
+Less</h3>
+<p><a rel="noopener" target="_blank" href="http://lesscss.org/">Less</a> dosyalarını CSS olarak derlemek için <code>less</code> metodunu kullanacağız. <code>less</code> metodu parametre olarak derlemek istediğiniz less dosyasının yerini istemektedir. Varsayılan olarak, derlenen CSS <code>public/css/app.css</code> olarak çıktı verecektir.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">less</span><span>(&#39;</span><span style="color:#a3be8c;">app.less</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<p>Dilerseniz birden çok Less dosyasını tek bir CSS dosyası da yapabilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">less</span><span>([
+</span><span>    	&#39;</span><span style="color:#a3be8c;">app.less</span><span>&#39;,
+</span><span>        &#39;</span><span style="color:#a3be8c;">arayuz.less</span><span>&#39;
+</span><span>    ]);
+</span><span>});
+</span></code></pre>
+<p>Eğer <code>public/css/app.css</code> yerine farklı bir dizine farklı dosya adı ile kaydetmek istiyorsanız ikinci parametre olarak verebilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">less</span><span>(&#39;</span><span style="color:#a3be8c;">app.less</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">public/stylesheets</span><span>&#39;); </span><span style="color:#65737e;">// public/stylesheets/app.css çıktısı verecektir
+</span><span>});
+</span><span>
+</span><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">less</span><span>(&#39;</span><span style="color:#a3be8c;">app.less</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">public/stylesheets/style.css</span><span>&#39;); </span><span style="color:#65737e;">// public/stylesheets/style.css çıktısı verecektir
+</span><span>});
+</span></code></pre>
+<h3 id="sass"><a class="no-style" href="#sass" aria-label="Anchor link for: sass">###</a>
+Sass</h3>
+<p><code>sass</code> metodu ile <a rel="noopener" target="_blank" href="http://sass-lang.com/">Sass</a> dosyalarınızı CSS’e derleyebilirsiniz. Sass dosyaları <code>resources/assets/sass</code> klasöründe yer almalıdır.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">sass</span><span>(&#39;</span><span style="color:#a3be8c;">app.scss</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<p><code>less</code> metoduna benzer olarak birden çok Sass dosyasını tek bir CSS dosyası yapabilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">sass</span><span>([
+</span><span>    	&#39;</span><span style="color:#a3be8c;">app.scss</span><span>&#39;,
+</span><span>        &#39;</span><span style="color:#a3be8c;">arayuz.scss</span><span>&#39;
+</span><span>    ], &#39;</span><span style="color:#a3be8c;">public/assets/css</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<h3 id="duz-css"><a class="no-style" href="#duz-css" aria-label="Anchor link for: duz-css">###</a>
+Düz CSS</h3>
+<p>Birden çok CSS dosyasını tek bir CSS dosyası yapmak istiyorsanız <code>styles</code> metodunu kullanabilirsiniz. Belirttiğiniz CSS dosyası isimleri <code>resources/assets/css</code> klasöründe aranacaktır.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">styles</span><span>([
+</span><span>    	&#39;</span><span style="color:#a3be8c;">normalize.css</span><span>&#39;,
+</span><span>        &#39;</span><span style="color:#a3be8c;">main.css</span><span>&#39;
+</span><span>    ]);
+</span><span>});
+</span></code></pre>
+<p>Sass ve Less’te olduğu gibi çıktı dizinini ikinci parametre ile değiştirebilirsiniz.</p>
+<h3 id="kaynak-haritasi"><a class="no-style" href="#kaynak-haritasi" aria-label="Anchor link for: kaynak-haritasi">###</a>
+Kaynak Haritası</h3>
+<p><strong>Source Map</strong> dosyaları derleme işlemi hakkında bilgileri saklamaktadır. Tarayıcılar bu sayede debugta hangi satırın nerede olduğunu gösterebilmektedir.</p>
+<p>Eğer <strong>source maps</strong> dosyalarının derlenmesini istemiyorsanız bunu Elixir’e belirtebilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#bf616a;">elixir</span><span>.</span><span style="color:#bf616a;">config</span><span>.</span><span style="color:#bf616a;">sourcemaps </span><span>= </span><span style="color:#d08770;">false</span><span>;
+</span><span>
+</span><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">sass</span><span>(&#39;</span><span style="color:#a3be8c;">app.scss</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<h2 id="script-dosyalariyla-calismak"><a class="no-style" href="#script-dosyalariyla-calismak" aria-label="Anchor link for: script-dosyalariyla-calismak">##</a>
+Script Dosyalarıyla Çalışmak</h2>
+<p>Elixir ayrıca Javascript çalışmalarınız için de birçok fonksiyon sağlamakta. ECMAScript 6 derlemesi, Coffeescript, Browserify, küçültme(minify) ve basit concat işlemi yapmak gibi.</p>
+<h3 id="coffeescript"><a class="no-style" href="#coffeescript" aria-label="Anchor link for: coffeescript">###</a>
+CoffeeScript</h3>
+<p><code>coffee</code> metodu ile <a rel="noopener" target="_blank" href="http://coffeescript.org/">CoffeeScript</a> dosyalarınızı JS’ye derleyebilirsiniz. <code>coffee</code> metodu ilk parametre olarak CoffeeScript dosyalarının  yollarını alır. Çıktıyı <code>app.js</code> olarak <code>public/js</code> klasörüne oluşturur.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">coffee</span><span>([&#39;</span><span style="color:#a3be8c;">app.coffee</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">arayuz.coffee</span><span>&#39;]);
+</span><span>});
+</span></code></pre>
+<h3 id="browserify"><a class="no-style" href="#browserify" aria-label="Anchor link for: browserify">###</a>
+Browserify</h3>
+<p><code>browserify</code> metodu ile <strong>require</strong> işlemi, <strong>JSX</strong> ve <strong>ECMAScript 6</strong> kullanımı  gibi özellikler sağlar.</p>
+<p><code>browserify</code>’da script dosyaları <code>resources/assets/js</code> içerisinde aranır ve çıktı olarak <code>public/js/main.js</code> çıktısı verir. Dilerseniz ikinci parametre ile çıktı dizinini değiştirebilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">browserify</span><span>(&#39;</span><span style="color:#a3be8c;">main.js</span><span>&#39;);
+</span><span>});
+</span><span>
+</span><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">browserify</span><span>(&#39;</span><span style="color:#a3be8c;">main.js</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">public/javascripts/main.js</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<h3 id="babel"><a class="no-style" href="#babel" aria-label="Anchor link for: babel">###</a>
+Babel</h3>
+<p><code>babel</code> metodu Javascript’te <a rel="noopener" target="_blank" href="https://babeljs.io/docs/learn-es2015/">ECMAScript 6 ve 7</a> ve <a rel="noopener" target="_blank" href="https://facebook.github.io/react/docs/jsx-in-depth.html">JSX</a> kullanmanızı sağlar. İlk parametre olarak <code>resources/assets/js</code> klasöründe yer alan dosya listesini ister ve çıktı olarak <code>public/js/all.js</code> çıktısı verir.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>){
+</span><span>	</span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">babel</span><span>([
+</span><span>    	&#39;</span><span style="color:#a3be8c;">odeme.js</span><span>&#39;,
+</span><span>        &#39;</span><span style="color:#a3be8c;">urun.js</span><span>&#39;,
+</span><span>        &#39;</span><span style="color:#a3be8c;">react-component.jsx</span><span>&#39;
+</span><span>    ]);
+</span><span>});
+</span></code></pre>
+<p>Çıktı dizinini ve dosya ismini değiştirmek için ikinci parametre ile belirtmeniz yeterlidir.</p>
+<h3 id="scriptler"><a class="no-style" href="#scriptler" aria-label="Anchor link for: scriptler">###</a>
+Scriptler</h3>
+<p>Birden çok JS dosyanız var ve bunları tek bir JS dosyası yapmak istiyorsanız <code>scripts</code> metodunu kullanabilirsiniz.</p>
+<p><code>scripts</code> metodu ilk parametre olarak <code>resources/assets/js</code> içerisindeki dosya isimlerini alır, çıktı olarak <code>public/js/all.js</code> verir.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">scripts</span><span>([
+</span><span>        &#39;</span><span style="color:#a3be8c;">jquery.js</span><span>&#39;,
+</span><span>        &#39;</span><span style="color:#a3be8c;">app.js</span><span>&#39;
+</span><span>    ]);
+</span><span>});
+</span></code></pre>
+<p>Eğer bir klasör içerisindeki tüm JS dosyaları için bu işlemi yapmak istiyorsanız <code>scriptsIn</code> metodunu kullanabilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">scriptsIn</span><span>(&#39;</span><span style="color:#a3be8c;">public/js/klasor/yolu</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<h2 id="dosyalari-klasorleri-kopyalama"><a class="no-style" href="#dosyalari-klasorleri-kopyalama" aria-label="Anchor link for: dosyalari-klasorleri-kopyalama">##</a>
+Dosyaları &amp; Klasörleri Kopyalama</h2>
+<p><code>copy</code> metodu ile belirli dosya ve klasörleri istediğiniz yere kopyalayabilirsiniz. Bu metotda verdiğiniz yollar projenin ana dizinine göre çalışır.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">copy</span><span>(&#39;</span><span style="color:#a3be8c;">vendor/foo/bar.css</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">public/css/bar.css</span><span>&#39;);
+</span><span>});
+</span><span>
+</span><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">copy</span><span>(&#39;</span><span style="color:#a3be8c;">bower_components/font-awesome/icons</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">public/icons</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<h2 id="versiyonlama"><a class="no-style" href="#versiyonlama" aria-label="Anchor link for: versiyonlama">##</a>
+Versiyonlama</h2>
+<p>Birçok geliştirici derlediği assetlerin tarayıcıda önbelleğe takılmaması için benzersiz bir kodla veya tarih ile asset dosyalarını çağırır. Bu işlemi Elixir <code>version</code> metodu ile yapabilirsiniz.</p>
+<p><code>version</code> metodu ilk parametre olarak <code>public</code> içerisindeki dosyanın ismini alır. Sonuna benzersiz bir kod koyarak versiyonlama yapmanızı sağlar. Örneğin <code>all-16d570a7.css</code> gibi.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">version</span><span>(&#39;</span><span style="color:#a3be8c;">css/all.css</span><span>&#39;);
+</span><span>});
+</span></code></pre>
+<p>Versiyonlamadan sonra bu CSS dosyasını ön tarafta çağırmanız için PHP <code>elixir</code> yardımcı fonksiyonunu kullanmanız gerekiyor. <code>elixir</code> fonksiyonu otomatik olarak kodlu dosyanın ismini getirecektir.</p>
+<pre data-lang="html" style="background-color:#2b303b;color:#c0c5ce;" class="language-html "><code class="language-html" data-lang="html"><span>{% raw %}
+</span><span>&lt;</span><span style="color:#bf616a;">link </span><span style="color:#d08770;">rel</span><span>=&quot;</span><span style="color:#a3be8c;">stylesheet</span><span>&quot; </span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">{{ elixir(&#39;css/all.css&#39;) }}</span><span>&quot;&gt;
+</span><span>{% endraw %}
+</span></code></pre>
+<p>Dilerseniz elixir’e dizi olarak değer gönderip çoklu dosya versiyonlaması yapabilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">version</span><span>([&#39;</span><span style="color:#a3be8c;">css/all.css</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">js/app.js</span><span>&#39;]);
+</span><span>});
+</span></code></pre>
+<h2 id="browsersync"><a class="no-style" href="#browsersync" aria-label="Anchor link for: browsersync">##</a>
+BrowserSync</h2>
+<p>BrowserSync, frontenddeki yaptığınız değişikliklerde web tarayıcısının otomatik yenilenmesini sağlar. <code>browserSync</code> metodu ile <strong>BrowserSync</strong> sunucusu çalıştırabilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">browserSync</span><span>();
+</span><span>});
+</span></code></pre>
+<p><code>gulp watch</code> komutu çalıştırdığınızda <strong>3000</strong> portu üzerinden web uygulamanıza bağlantıyı sağlayabilirsiniz. [http://homestead.app:3000] adresinden BrowserSync’e ulaşabileceksiniz. Fakat <strong>homestead.app</strong> dışında bir domain üzerinden geliştirme yapıyorsanız bunu da değiştirebilirsiniz.</p>
+<pre data-lang="js" style="background-color:#2b303b;color:#c0c5ce;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#8fa1b3;">elixir</span><span>(</span><span style="color:#b48ead;">function</span><span>(</span><span style="color:#bf616a;">mix</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">mix</span><span>.</span><span style="color:#8fa1b3;">browserSync</span><span>({
+</span><span>        proxy: &#39;</span><span style="color:#a3be8c;">proje.app</span><span>&#39;
+</span><span>    });
+</span><span>});
+</span></code></pre>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2016-05-21-laravel-elixir.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

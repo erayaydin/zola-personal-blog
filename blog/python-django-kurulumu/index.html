@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Django Kurulumu</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/python-django-kurulumu/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/python-django-kurulumu/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Django Kurulumu">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">python-django-kurulumu</span>
+</div>
+<time datetime="2017-10-20T20:33:00">Published on: <span class="accent-data">2017-10-20T20:33:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Django Kurulumu</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/python-django-kurulumu/#django-kurulum">Django Kurulum</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/python-django-kurulumu/#python-kurulumu">Python Kurulumu</a>
+        <ul>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#hangi-python-versiyonu">Hangi Python Versiyonu?</a>
+          </li>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#python-in-kurulmasi">Python’ın Kurulması</a>
+          </li>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#python-kurulumunun-test-edilmesi">Python Kurulumunun Test Edilmesi</a>
+          </li>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/python-django-kurulumu/#pip-kurulumu">Pip Kurulumu</a>
+        <ul>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#ubuntu-1">Ubuntu</a>
+          </li>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#centos-ve-rhel">CentOS ve RHEL</a>
+          </li>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#fedora-1">Fedora</a>
+          </li>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#arch-linux-1">Arch Linux</a>
+          </li>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#opensuse">openSUSE</a>
+          </li>
+          
+          <li>
+            <a href="https://era.yayd.in/blog/python-django-kurulumu/#kurulumun-test-edilmesi">Kurulumun Test Edilmesi</a>
+          </li>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/python-django-kurulumu/#django-nun-pip-yardimiyla-kurulumu">Django’nun Pip Yardımıyla Kurulumu</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/python-django-kurulumu/#kurulumun-test-edilmesi-1">Kurulumun Test Edilmesi</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<h1 id="django-kurulum"><a class="no-style" href="#django-kurulum" aria-label="Anchor link for: django-kurulum">#</a>
+Django Kurulum</h1>
+<p>Bu makale, <code>Django</code> kurulumu ve çalıştırılmasını kapsar.</p>
+<h2 id="python-kurulumu"><a class="no-style" href="#python-kurulumu" aria-label="Anchor link for: python-kurulumu">##</a>
+Python Kurulumu</h2>
+<p>Django’nun bir <strong>Python Web Framework</strong> olmasından dolayı; Django, Python’un kurulu olmasını ister. Bildiğiniz gibi Python’un bir çok versiyonu var. Aktif olarak
+hem <strong>Python 2</strong> hem de <strong>Python 3</strong> kullanılıyor.</p>
+<h3 id="hangi-python-versiyonu"><a class="no-style" href="#hangi-python-versiyonu" aria-label="Anchor link for: hangi-python-versiyonu">###</a>
+Hangi Python Versiyonu?</h3>
+<p>Her Django versiyonu her sürümü desteklemiyor. Bu sebeple, kullanacağınız <strong>Python</strong> ve <strong>Django</strong> sürümüne göre aşağıdaki tablodan karar verebilirsiniz.</p>
+<table><thead><tr><th>Django Versiyon</th><th>Python Versiyon</th></tr></thead><tbody>
+<tr><td>1.8</td><td>2.7, 3.3, 3.4, 3.5</td></tr>
+<tr><td>1.9, 1.10</td><td>2.7, 3.4, 3.5</td></tr>
+<tr><td>1.11</td><td>2.7, 3.4, 3.5, 3.6</td></tr>
+<tr><td>2.0</td><td>3.4, 3.5, 3.6</td></tr>
+<tr><td>2.1</td><td>3.5, 3.6, 3.7</td></tr>
+</tbody></table>
+<h3 id="python-in-kurulmasi"><a class="no-style" href="#python-in-kurulmasi" aria-label="Anchor link for: python-in-kurulmasi">###</a>
+Python’ın Kurulması</h3>
+<p>Kurulacak <strong>Python</strong> sürümünü belirledikten sonra artık python kurulumuna geçelim.</p>
+<h4 id="windows"><a class="no-style" href="#windows" aria-label="Anchor link for: windows">####</a>
+Windows</h4>
+<p>Windows :( ortamı için kurulum gerçekleştireceksiniz <a rel="noopener" target="_blank" href="https://www.python.org/downloads/windows/">Python Releases for Windows</a> sayfasından kurmak istediğiniz Python sürümüne göre kurulum sihirbazını indirebilirsiniz.</p>
+<h4 id="linux-unix"><a class="no-style" href="#linux-unix" aria-label="Anchor link for: linux-unix">####</a>
+Linux/UNIX</h4>
+<h5 id="arch-linux"><a class="no-style" href="#arch-linux" aria-label="Anchor link for: arch-linux">#####</a>
+Arch Linux</h5>
+<p>Arch Linux dağıtımında kurulum işlemini <code>pacman</code> paket yöneticisi ile yapabilirsiniz.</p>
+<p>Python 3 son sürümü kurmak için</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pacman -Sy</span><span> python
+</span></code></pre>
+<p>Python 2 son sürümü kurmak için</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pacman -Sy</span><span> python2
+</span></code></pre>
+<p>Eski sürümleri kullanacaksanız <strong>AUR</strong> kullanarak aşağıdaki sürümler için kurulum yapabilirsiniz.</p>
+<table><thead><tr><th>Python Versiyon</th><th>AUR Paket Adı</th></tr></thead><tbody>
+<tr><td>Python 3.5</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python35/">python35</a></td></tr>
+<tr><td>Python 3.4</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python34/">python34</a></td></tr>
+<tr><td>Python 3.3</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python33/">python33</a></td></tr>
+<tr><td>Python 3.2</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python32/">python32</a></td></tr>
+<tr><td>Python 3.0</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python30/">python30</a></td></tr>
+<tr><td>Python 2.6</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python26/">python26</a></td></tr>
+<tr><td>Python 2.5</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python25/">python25</a></td></tr>
+<tr><td>Python 1.5</td><td><a rel="noopener" target="_blank" href="https://aur.archlinux.org/packages/python15/">python15</a></td></tr>
+</tbody></table>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">yaourt -Sy</span><span> python35
+</span></code></pre>
+<h5 id="ubuntu"><a class="no-style" href="#ubuntu" aria-label="Anchor link for: ubuntu">#####</a>
+Ubuntu</h5>
+<p>Ubuntu 16.04 ile Python 3 ve Python 2 kurulu olarak gelmektedir.</p>
+<p>Eski versiyonları yüklemek için <em>deadsnakes</em>’ isimli PPA depoyu aktif edip eski versiyonları yükleyebilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">add-apt-repository</span><span> ppa:fkrull/deadsnakes
+</span><span style="color:#bf616a;">apt-get</span><span> update
+</span></code></pre>
+<p>Kurulum işlemi için de aşağıdaki gibi versiyon adını yazarak yükleyebilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">apt-get</span><span> install python2.6 python3.3
+</span></code></pre>
+<h5 id="fedora"><a class="no-style" href="#fedora" aria-label="Anchor link for: fedora">#####</a>
+Fedora</h5>
+<p>Fedora ile Python 3 ve Python 2 kurulu olarak gelmektedir.</p>
+<h3 id="python-kurulumunun-test-edilmesi"><a class="no-style" href="#python-kurulumunun-test-edilmesi" aria-label="Anchor link for: python-kurulumunun-test-edilmesi">###</a>
+Python Kurulumunun Test Edilmesi</h3>
+<p>Python’ın kurulumunu test etmek ve kurulu olan versiyon sürümünü öğrenmek için <code>python</code> çalıştırabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">python --version
+</span></code></pre>
+<h2 id="pip-kurulumu"><a class="no-style" href="#pip-kurulumu" aria-label="Anchor link for: pip-kurulumu">##</a>
+Pip Kurulumu</h2>
+<h3 id="ubuntu-1"><a class="no-style" href="#ubuntu-1" aria-label="Anchor link for: ubuntu-1">###</a>
+Ubuntu</h3>
+<p>Python 2 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">apt-get</span><span> install python-pip
+</span></code></pre>
+<p>Python 3 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">apt-get</span><span> install python3-pip
+</span></code></pre>
+<h3 id="centos-ve-rhel"><a class="no-style" href="#centos-ve-rhel" aria-label="Anchor link for: centos-ve-rhel">###</a>
+CentOS ve RHEL</h3>
+<p>CentOS ve Red Hat Enterprise Linux için pip kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">yum</span><span> install epel-release
+</span><span style="color:#bf616a;">yum</span><span> install python-pip
+</span></code></pre>
+<h3 id="fedora-1"><a class="no-style" href="#fedora-1" aria-label="Anchor link for: fedora-1">###</a>
+Fedora</h3>
+<p>Python 2 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">dnf</span><span> install python-pip
+</span></code></pre>
+<p>Python 3 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">dnf</span><span> install python3-pip
+</span></code></pre>
+<h3 id="arch-linux-1"><a class="no-style" href="#arch-linux-1" aria-label="Anchor link for: arch-linux-1">###</a>
+Arch Linux</h3>
+<p>Python 2 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pacman -S</span><span> python2-pip
+</span></code></pre>
+<p>Python 3 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pacman -S</span><span> python-pip
+</span></code></pre>
+<h3 id="opensuse"><a class="no-style" href="#opensuse" aria-label="Anchor link for: opensuse">###</a>
+openSUSE</h3>
+<p>Python 2 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">zypper</span><span> install python-pip
+</span></code></pre>
+<p>Python 3 için <strong>pip</strong> kurulumu</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">zypper</span><span> install python3-pip
+</span></code></pre>
+<h3 id="kurulumun-test-edilmesi"><a class="no-style" href="#kurulumun-test-edilmesi" aria-label="Anchor link for: kurulumun-test-edilmesi">###</a>
+Kurulumun Test Edilmesi</h3>
+<p>Pip kurulumunu test etmek ve versiyonu öğrenmek için aşağıdaki komutu çalıştırabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pip --version
+</span></code></pre>
+<h2 id="django-nun-pip-yardimiyla-kurulumu"><a class="no-style" href="#django-nun-pip-yardimiyla-kurulumu" aria-label="Anchor link for: django-nun-pip-yardimiyla-kurulumu">##</a>
+Django’nun Pip Yardımıyla Kurulumu</h2>
+<p>Pip yardımıyla Django paketini artık sisteme kurabiliriz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pip</span><span> install Django
+</span></code></pre>
+<p>Eski sürüm bir Django kurulumu için de şunu kullanabilirsiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">pip</span><span> install Django==1.0.4
+</span></code></pre>
+<h2 id="kurulumun-test-edilmesi-1"><a class="no-style" href="#kurulumun-test-edilmesi-1" aria-label="Anchor link for: kurulumun-test-edilmesi-1">##</a>
+Kurulumun Test Edilmesi</h2>
+<p>Django’nun başarılı bir şekilde kurulup kurulmadığını test etmek için Python’un interaktif kabuğunu kullanabiliriz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">$</span><span> python
+</span><span style="color:#bf616a;">Python</span><span> 3.6.2 (default, Jul 20 2017, 03:52:27) 
+</span><span style="color:#bf616a;">[GCC</span><span> 7.1.1 20170630] on linux
+</span><span style="color:#bf616a;">Type </span><span>&quot;</span><span style="color:#a3be8c;">help</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">copyright</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">credits</span><span>&quot; or &quot;</span><span style="color:#a3be8c;">license</span><span>&quot; for more information.
+</span><span>&gt;&gt;&gt; 
+</span></code></pre>
+<p>İnteraktif kabukta öncelikle django paketinin olup olmadığını deneyelim.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span>&gt;&gt;&gt; import </span><span style="color:#bf616a;">django
+</span></code></pre>
+<p>Eğer sonucunda şu şekilde bir çıktı aldıysanız, sistemde django paketi bulunmuyor demektir.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span>&gt;&gt;&gt; import </span><span style="color:#bf616a;">django
+</span><span style="color:#bf616a;">Traceback</span><span> (most recent call last)</span><span style="color:#96b5b4;">:
+</span><span>  </span><span style="color:#bf616a;">File </span><span>&quot;</span><span style="color:#a3be8c;">&lt;stdin&gt;</span><span>&quot;, line 1, in &lt;module&gt;
+</span><span style="color:#bf616a;">ModuleNotFoundError:</span><span> No module named &#39;</span><span style="color:#a3be8c;">django</span><span>&#39;
+</span></code></pre>
+<p>Eğer herhangi bir çıktı vermediyse django paketi bulunmuş ve içe aktarılmış demektir. Şimdi kurulu olan django versiyonunu öğrenelim.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span>&gt;&gt;&gt; import </span><span style="color:#bf616a;">django
+</span><span>&gt;&gt;&gt; print(</span><span style="color:#8fa1b3;">django.get_version</span><span>())
+</span><span>1.11.6
+</span></code></pre>
+<p>Bu adımları da tamamladıktan sonra sistemimize Django kurulumu yapmış oluyoruz. Bir sonraki makalede <code>virtualenv</code> ile daha sağlıklı bir geliştirme ortamı hazırlamak için gerekli adımları yazmayı düşünüyorum.</p>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2017-10-16-django-kurulum.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>

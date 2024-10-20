@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="robots" content="index, follow">
+<title>Sudo Ayarları</title>
+
+<meta name="author" content="Eray Aydın">
+<meta name="description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+<link rel="canonical" href="https://era.yayd.in/blog/sudo-ayarlari/">
+<link rel="shortcut icon" type="image/x-icon" href="https://era.yayd.in/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://era.yayd.in/blog/sudo-ayarlari/">
+<meta property="og:site_name" content="Eray Aydın">
+<meta property="og:title" content="Sudo Ayarları">
+<meta property="og:description" content="Scala Developer, Laravel Artisan, Free Software Fan, Archy, Linux Lover, WoW Loremaster, Junior Game Developer">
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="RSS" href="https://era.yayd.in/atom.xml"> 
+
+
+
+<link rel="stylesheet" type="text/css" href="https://era.yayd.in/app.css"/>
+<style></style>
+
+
+</head>
+<body>
+      <header>
+          <nav>
+    
+      <a href="/">
+        &#x2F;home
+      </a>
+    
+      <a href="/about/">
+        &#x2F;about
+      </a>
+    
+      <a href="/journal/">
+        &#x2F;journal
+      </a>
+    
+      <a href="/blog/" class="active">
+        &#x2F;blog
+      </a>
+    
+      <a href="https://github.com/erayaydin/erayaydin.github.io">
+        &#x2F;download
+      </a>
+    
+    <div>
+      <input type="checkbox" id="themeToggle" style="display: none;">
+      <label for="themeToggle"><svg id="themeIcon" class="icons"><use href="https://era.yayd.in/icons.svg#lightMode"></use></svg></label>
+      <audio id="themeSound">
+        <source src="https://era.yayd.in/click.ogg" type="audio/ogg">
+      </audio>
+    </div>
+</nav>
+
+      </header>
+      <main>
+          
+<div>
+    <a href="..">..</a>/<span class="accent-data">sudo-ayarlari</span>
+</div>
+<time datetime="2015-12-13T16:46:00">Published on: <span class="accent-data">2015-12-13T16:46:00</span></time>
+<address rel="author">By <span class="accent-data">Eray Aydın</span></address>
+<h1>Sudo Ayarları</h1>
+<hr>
+<h2 id="toc">Table of contents</h2>
+<ul>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/sudo-ayarlari/#kurulum">Kurulum</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/sudo-ayarlari/#kullanim">Kullanım</a>
+    
+  </li>
+  
+  <li>
+    <a href="https://era.yayd.in/blog/sudo-ayarlari/#ayarlamalar">Ayarlamalar</a>
+    
+    <ul>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/sudo-ayarlari/#ayarlari-goruntuleme">Ayarları Görüntüleme</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/sudo-ayarlari/#visudo-kullanimi">Visudo Kullanımı</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/sudo-ayarlari/#ornek-ayarlar">Örnek Ayarlar</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/sudo-ayarlari/#sudoers-varsayilan-dosya-izinleri">Sudoers Varsayılan Dosya İzinleri</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="https://era.yayd.in/blog/sudo-ayarlari/#bazi-ortam-degiskenleri-tutmak">Bazı Ortam Değişkenleri Tutmak</a>
+        <ul>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+</ul>
+<hr>
+<div class="page-content">
+<p>Sudo, yani “kullanıcı yerine yapmak”, belirli kullanıcı veya gruplara
+root yetkisiyle komut gerçekleştirmesini sağlar.</p>
+<p>Sudo, <code>su</code> nun alternatifi olarak kullanılıyor. <code>su</code> dan farklı olarak,
+<code>root shell</code> açmak yerine tek komutluk <code>root</code> yetkisi sağlamaktadır.
+Sadece gerektiğinde <code>root</code> yetkisi kullanmanızı sağlar.</p>
+<p>Sudo ayrıca diğer kullanıcılar gibi komut yazmanıza da olanak sağlar. Ek
+olarak kullanılan komutları ve başarısız girişleri kayıt altına
+alır(loglar).</p>
+<h2 id="kurulum"><a class="no-style" href="#kurulum" aria-label="Anchor link for: kurulum">##</a>
+Kurulum</h2>
+<p>Pacman üzerinden kurulum için <code>sudo</code> paketini kurmanız yeterli.</p>
+<h2 id="kullanim"><a class="no-style" href="#kullanim" aria-label="Anchor link for: kullanim">##</a>
+Kullanım</h2>
+<p><code>sudo</code> yu kullanmak için öncelikle ayarlamaları yapmalısınız. Aşağıda
+ayarlamaları detaylı bir şekilde anlattım.</p>
+<p>Örnek olarak, pacman i kullanmak için:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">sudo</span><span> pacman</span><span style="color:#bf616a;"> -Syu
+</span></code></pre>
+<p>Detaylı kullanımı öğrenmek için</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">man</span><span> sudo
+</span></code></pre>
+<h2 id="ayarlamalar"><a class="no-style" href="#ayarlamalar" aria-label="Anchor link for: ayarlamalar">##</a>
+Ayarlamalar</h2>
+<h3 id="ayarlari-goruntuleme"><a class="no-style" href="#ayarlari-goruntuleme" aria-label="Anchor link for: ayarlari-goruntuleme">###</a>
+Ayarları Görüntüleme</h3>
+<p><code>sudo -ll</code> komutu ile şuanki ayarlamaları görebilirsiniz. Bir kullanıcı
+için ayarlamaları görmek istiyorsanız komutun sonuna kullanıcı adını
+eklemeniz yeterli.</p>
+<h3 id="visudo-kullanimi"><a class="no-style" href="#visudo-kullanimi" aria-label="Anchor link for: visudo-kullanimi">###</a>
+Visudo Kullanımı</h3>
+<p>Sudo için ayarlamaları tutan dosya: <code>/etc/sudoers</code>. <strong>her zaman</strong>
+<code>visudo</code> komutu ile bu dosyayı düzenlemeniz gerekiyor. <code>visudo</code> komutu
+<code>sudoers</code> dosyasını kilitleyip, geçici bir dosyaya kaydedip, ayar
+dosyasının uygun düzende olup olmadığını kontrol edip <code>/etc/sudoers</code>
+dosyasına kopyalar.</p>
+<p>Visudo için varsayılan editor <code>vi</code>dir. Nano ile <code>visudo</code> kullanmak
+istiyorsanız EDITOR ortam değişkenini güncellemelisiniz.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">EDITOR</span><span>=</span><span style="color:#a3be8c;">nano </span><span style="color:#bf616a;">visudo
+</span></code></pre>
+<h3 id="ornek-ayarlar"><a class="no-style" href="#ornek-ayarlar" aria-label="Anchor link for: ornek-ayarlar">###</a>
+Örnek Ayarlar</h3>
+<p>Bir kullanıcının <code>sudo</code> komutu ile <code>root</code> yetkisine sahip olmasına izin
+vermek için şu satırı eklemelisiniz:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>KULLANICI_ADI ALL=(ALL) ALL
+</span></code></pre>
+<p><code>wheel</code> grubundaki tüm kullanıcıların <code>sudo</code> erişimi olması için:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>%whell ALL=(ALL) ALL
+</span></code></pre>
+<p><code>sudo</code> komutu kullanılırken şifre sormasını istemiyorsanız:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Defaults:KULLANICI_ADI !authenticate
+</span></code></pre>
+<p>Kullanıcının belli başlı komutları kullanabilmesi için:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>KULLANICI_ADI ALL=/usr/bin/halt,/usr/bin/pacman -Syu
+</span></code></pre>
+<h3 id="sudoers-varsayilan-dosya-izinleri"><a class="no-style" href="#sudoers-varsayilan-dosya-izinleri" aria-label="Anchor link for: sudoers-varsayilan-dosya-izinleri">###</a>
+Sudoers Varsayılan Dosya İzinleri</h3>
+<p><code>sudoers</code> dosyasının sahibi ve grubu 0 olarak tanımlanmalıdır. Dosya
+izinleri 0440 olarak belirtilmelidir. Bu izinler varsayılan olarak
+ayarlanır. Eğer bir durumdan dolayı bu izinleri değiştirirseniz,
+tekrardan eski haline döndürmelisiniz. Aksi takdirde <code>sudo</code>
+çalışmayacaktır.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">chown -c</span><span> root:root /etc/sudoers
+</span><span style="color:#bf616a;">chmod -c</span><span> 0440 /etc/sudoers
+</span></code></pre>
+<h3 id="bazi-ortam-degiskenleri-tutmak"><a class="no-style" href="#bazi-ortam-degiskenleri-tutmak" aria-label="Anchor link for: bazi-ortam-degiskenleri-tutmak">###</a>
+Bazı Ortam Değişkenleri Tutmak</h3>
+<p><code>sudo</code> komutu kullanılırken bazı ortam değişkenlerini tutmak
+isteyebilirsiniz. Bunun için <code>sudoers</code> dosyasında:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Defaults env_keep += &quot;ftp_proxy http_proxy https_proxy no_proxy&quot;
+</span></code></pre>
+<p>Bu ayarlama ile <code>ftp_proxy</code> <code>http_proxy</code> <code>https_proxy</code> <code>no_proxy</code> ortam değişkenleri
+duracaktır.</p>
+
+</div>
+<br>
+<a href="https://github.com/erayaydin/zola-personal-blog/blob/main/content/blog&#x2F;2015-12-13-sudo-ayarlari.md" class="button">Contribute to this post</a>
+<hr>
+<script src="https://utteranc.es/client.js"
+        repo="erayaydin/zola-personal-blog"
+        issue-term="pathname"
+        label="💬"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      </main>
+      <footer>
+          <hr>
+<div>
+    <div>
+        <p>Built with <a target="_blank" rel="noopener noreferrer" href="https://www.getzola.org">Zola</a>, theme inspired from <a target="_blank" rel="noopener noreferrer" href="https://github.com/Speyll/anemone">anemone</a>.</p>
+    </div>
+
+  <div>
+    <a target="_blank" class="no-style" rel="noopener noreferrer" href="https://era.yayd.in/atom.xml" title="Subscribe via RSS for updates."><svg class="icons"><use href="https://era.yayd.in/icons.svg#rss"></use></svg></a>
+  </div>
+
+</div>
+
+      </footer>
+      
+      <script src="https://era.yayd.in/app.js" defer></script>
+      
+</body>
+</html>
