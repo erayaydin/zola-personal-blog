@@ -56,3 +56,11 @@ footer > div {
 .theme-transition {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
+
+.accent-color {
+  color: var(--accent);
+}
+
+blockquote > p {
+  margin: 0;
+}
